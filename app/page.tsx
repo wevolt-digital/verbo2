@@ -54,7 +54,7 @@ export default function Home() {
         <div className="stat-inner">
           <div className="stat-label-top sr">Velocidade de download</div>
           <div className="stat-giant sr d1">
-            <AnimatedCounter value={500} />
+            <AnimatedCounter value={400} suffix="+" />
           </div>
           <div className="stat-unit sr d1">Mbps</div>
           <p className="stat-context sr d2">Uma conexão que não conhece distância. Disponível em todo o Brasil, de norte a sul.</p>
