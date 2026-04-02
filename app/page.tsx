@@ -27,7 +27,7 @@ export default function Home() {
         <div className="hero-content">
           <div className="hero-eyebrow sr">
             <span />
-            Internet via satélite LEO
+            Internet via satélite
             <span />
           </div>
           <h1 className="sr d1">
@@ -36,17 +36,10 @@ export default function Home() {
           <p className="sub sr d2">
             Tecnologia orbital de última geração levando sinal de alta velocidade a qualquer ponto do território nacional, de forma rápida e confiável.
           </p>
-          <div className="hero-ctas sr d3">
+          <div className="hero-ctas sr d3" style={{ justifyContent: 'center' }}>
             <Link href="/contato" className="btn-p">
               <span className="shine" />
               Contratar plano
-            </Link>
-            <Link href="/#coverage" className="btn-s">
-              <svg viewBox="0 0 16 16" fill="none" strokeWidth="2" style={{ width: 14, height: 14 }}>
-                <circle cx="8" cy="8" r="6" />
-                <path d="M6 8l2 2 4-4" />
-              </svg>
-              Ver cobertura
             </Link>
           </div>
         </div>
