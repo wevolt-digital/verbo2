@@ -6,9 +6,9 @@ import type { LucideIcon } from 'lucide-react'
 
 const STEPS: { eyebrow: string; title: string; description: string; tags: string[]; visual: string; Icon: LucideIcon }[] = [
   {
-    eyebrow: 'Tecnologia orbital',
+    eyebrow: 'Starlink',
     title: 'Satélites em órbita baixa, mais perto de você.',
-    description: 'A constelação LEO opera a apenas 550 km de altitude, reduzindo a latência a níveis imperceptíveis e garantindo sinal estável em qualquer condição climática.',
+    description: 'Operando a cerca de 550 km de altitude, a constelação LEO (Low Earth Orbit) oferece baixa latência e conexão estável, mesmo em condições climáticas desafiadoras e locais remotos.',
     tags: ['LEO Technology', 'Baixa latência'],
     visual: 'v1',
     Icon: Satellite,
