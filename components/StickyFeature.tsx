@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Satellite, Zap, Lock } from 'lucide-react'
+import { Satellite, Zap } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 
 const STEPS: { eyebrow: string; title: string; description: string; tags: string[]; visual: string; Icon: LucideIcon }[] = [
@@ -20,14 +20,6 @@ const STEPS: { eyebrow: string; title: string; description: string; tags: string
     tags: ['Cobertura global', 'Alta confiabilidade'],
     visual: 'v2',
     Icon: Zap,
-  },
-  {
-    eyebrow: 'Segurança e controle',
-    title: 'Sua rede, protegida do ponto de origem ao destino.',
-    description: 'Criptografia de ponta a ponta, VPN dedicada e painel de gestão em tempo real. Monitore, controle e proteja toda a sua infraestrutura de comunicação.',
-    tags: ['Criptografia E2E', 'Dashboard em tempo real'],
-    visual: 'v3',
-    Icon: Lock,
   },
 ]
 
