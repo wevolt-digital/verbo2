@@ -19,7 +19,7 @@ export default function MarqueeBar() {
         {doubled.map((logo, i) => (
           <div key={i} className="marquee-item">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={logo.src} alt={logo.alt} style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
+            <img src={logo.src} alt={logo.alt} style={{ width: 'auto', objectFit: 'contain' }} />
           </div>
         ))}
       </div>
