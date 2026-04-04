@@ -1,25 +1,22 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { Satellite, Zap } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
+import Image from 'next/image'
 
-const STEPS: { eyebrow: string; title: string; description: string; tags: string[]; visual: string; Icon: LucideIcon }[] = [
+const STEPS: { eyebrow: string; title: string; description: string; tags: string[]; image: string }[] = [
   {
     eyebrow: 'Starlink',
     title: 'Satélites em órbita baixa, mais perto de você.',
     description: 'Operando a cerca de 550 km de altitude, a constelação LEO (Low Earth Orbit) oferece baixa latência e conexão estável, mesmo em condições climáticas desafiadoras e locais remotos.',
     tags: ['LEO Technology', 'Baixa latência'],
-    visual: 'v1',
-    Icon: Satellite,
+    image: '/starlink.webp',
   },
   {
     eyebrow: 'Inmarsat',
     title: 'Conectividade global, onde a operação não pode parar.',
-    description: 'Baseada em satélites geoestacionários (GEO), a tecnologia Inmarsat garante cobertura contínua e comunicação altamente confiável, ideal para operações críticas mesmo nos ambientes mais remotos.',
+    description: 'Baseada em satélites geoestacionários (GEO), a tecnologia Inmarsat garante cobertura contínua e comunicação altamente confiável, ideal para operações críticas.',
     tags: ['Cobertura global', 'Alta confiabilidade'],
-    visual: 'v2',
-    Icon: Zap,
+    image: '/inmarsat.webp',
   },
 ]
 
@@ -59,10 +56,15 @@ export default function StickyFeature() {
               {STEPS.map((step, i) => (
                 <div
                   key={i}
-                  className={`sticky-img-visual ${step.visual}`}
-                  style={{ display: currentStep === i ? 'flex' : 'none' }}
+                  style={{ display: currentStep === i ? 'block' : 'none' }}
                 >
-                  <div className="sticky-icon-wrap"><step.Icon size={44} strokeWidth={1.2} color="#fff" /></div>
+                  <Image
+                    src={step.image}
+                    alt={step.eyebrow}
+                    width={800}
+                    height={600}
+                    className="w-full"
+                  />
                 </div>
               ))}
             </div>
