@@ -205,7 +205,7 @@ nav a:hover { color: var(--text); }
 .stat-divider { width: 1px; height: 48px; background: rgba(255,255,255,.12); align-self: center; }
 
 /* ─── STICKY FEATURE ─── */
-#sticky-wrap { position: relative; height: 200vh; background: var(--bg); }
+#sticky-wrap { position: relative; height: 170vh; background: var(--bg); }
 #sticky-inner {
   position: sticky; top: 0; height: 100vh;
   display: flex; align-items: center; overflow: hidden; padding: 0 5%;
