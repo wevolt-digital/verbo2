@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 const LOGOS = [
   { src: '/clientes/antt.svg', alt: 'ANTT' },
   { src: '/clientes/banco-amazonia.svg', alt: 'Banco da Amazônia' },
@@ -20,7 +18,8 @@ export default function MarqueeBar() {
       <div className="marquee-track">
         {doubled.map((logo, i) => (
           <div key={i} className="marquee-item">
-            <Image src={logo.src} alt={logo.alt} width={120} height={48} style={{ objectFit: 'contain', height: '48px', width: 'auto' }} />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={logo.src} alt={logo.alt} style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
           </div>
         ))}
       </div>
