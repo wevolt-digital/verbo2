@@ -1,14 +1,14 @@
 const LOGOS = [
-  { src: '/clientes/antt.svg', alt: 'ANTT' },
-  { src: '/clientes/banco-amazonia.svg', alt: 'Banco da Amazônia' },
-  { src: '/clientes/bec.svg', alt: 'BEC' },
-  { src: '/clientes/biodiversitas.svg', alt: 'Biodiversitas' },
-  { src: '/clientes/censipam.svg', alt: 'CENSIPAM' },
-  { src: '/clientes/defensoria-bahia.svg', alt: 'Defensoria Pública da Bahia' },
-  { src: '/clientes/defensoria-rj.svg', alt: 'Defensoria Pública do RJ' },
-  { src: '/clientes/ferroeste.svg', alt: 'Ferroeste' },
-  { src: '/clientes/funai.svg', alt: 'FUNAI' },
-  { src: '/clientes/operacao-acolhida.svg', alt: 'Operação Acolhida' },
+  { src: '/clientes/antt.svg', alt: 'ANTT', large: true },
+  { src: '/clientes/banco-amazonia.svg', alt: 'Banco da Amazônia', large: true },
+  { src: '/clientes/bec.svg', alt: 'BEC', large: false },
+  { src: '/clientes/biodiversitas.svg', alt: 'Biodiversitas', large: false },
+  { src: '/clientes/censipam.svg', alt: 'CENSIPAM', large: false },
+  { src: '/clientes/defensoria-bahia.svg', alt: 'Defensoria Pública da Bahia', large: true },
+  { src: '/clientes/defensoria-rj.svg', alt: 'Defensoria Pública do RJ', large: false },
+  { src: '/clientes/ferroeste.svg', alt: 'Ferroeste', large: true },
+  { src: '/clientes/funai.svg', alt: 'FUNAI', large: false },
+  { src: '/clientes/operacao-acolhida.svg', alt: 'Operação Acolhida', large: false },
 ]
 
 export default function MarqueeBar() {
@@ -19,7 +19,7 @@ export default function MarqueeBar() {
         {doubled.map((logo, i) => (
           <div key={i} className="marquee-item">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={logo.src} alt={logo.alt} style={{ width: 'auto', objectFit: 'contain' }} />
+            <img src={logo.src} alt={logo.alt} style={{ height: logo.large ? '128px' : undefined, width: 'auto', objectFit: 'contain' }} />
           </div>
         ))}
       </div>
