@@ -263,7 +263,7 @@ nav a:hover { color: var(--text); }
   padding: 1.4rem 4rem;
   display: flex; align-items: center;
 }
-.marquee-item img { height: 72px; opacity: .6; transition: opacity .3s; filter: grayscale(1); }
+.marquee-item img { height: 96px; opacity: .6; transition: opacity .3s; filter: grayscale(1); }
 .marquee-item:hover img { opacity: 1; filter: grayscale(0); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
