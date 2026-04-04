@@ -266,31 +266,52 @@ nav a:hover { color: var(--text); }
 .marquee-item:hover img { opacity: 1; filter: grayscale(0); }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* ─── SPLIT FEATURES ─── */
-.features-section { padding: 0 5%; background: var(--bg); }
-.feature-row {
+/* ─── WHY VERBO ─── */
+.why-section { padding: 120px 5%; background: var(--bg); }
+.why-inner {
   display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
-  max-width: 1200px; margin: 0 auto; padding: 100px 0;
-  border-bottom: 1px solid var(--border);
+  max-width: 1200px; margin: 0 auto;
 }
-.feature-row:last-child { border-bottom: none; }
-.feature-row.rev { direction: rtl; }
-.feature-row.rev > * { direction: ltr; }
-.feature-visual {
-  border-radius: 24px; overflow: hidden;
-  box-shadow: 0 16px 56px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.04);
+.why-text .eyebrow { color: var(--cyan); display: block; margin-bottom: .8rem; }
+.why-title {
+  font-size: clamp(2rem, 3.2vw, 3rem); font-weight: 700; line-height: 1.12;
+  color: var(--text); margin-bottom: 1.6rem; position: relative; display: inline-block;
 }
-.fv-inner {
-  aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
+.why-title em { color: var(--primary); font-style: normal; }
+.why-title-line {
+  display: block; height: 3px; width: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--cyan));
+  border-radius: 2px; margin-top: .8rem;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .9s cubic-bezier(.25,.1,.25,1) .4s;
 }
-.fv-inner.c1 { background: linear-gradient(145deg, #EDF2FF 0%, #D0DFFF 100%); }
-.fv-inner.c2 { background: linear-gradient(145deg, #E0F7FF 0%, #B8EDFF 100%); }
-.fv-inner.c3 { background: linear-gradient(145deg, #E8F4FF 0%, #CCE8FF 100%); }
-.fv-icon { font-size: 4rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,.08)); }
-.feature-text .eyebrow { color: var(--cyan); }
-.feature-text h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 700; margin-bottom: 1rem; line-height: 1.12; color: var(--text); }
-.feature-text p { color: var(--muted); line-height: 1.85; font-size: .95rem; margin-bottom: 1.8rem; max-width: 440px; }
+.why-title.show .why-title-line { transform: scaleX(1); }
+.why-text p { color: var(--muted); line-height: 1.85; font-size: .95rem; max-width: 480px; }
+.why-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+}
+.why-card {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.4rem; border-radius: 16px;
+  border: 1px solid var(--border); background: var(--surface);
+  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+  cursor: default;
+}
+.why-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+  box-shadow: 0 12px 32px rgba(26,65,140,.1);
+}
+.why-card-icon {
+  width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--primary), #2558B8);
+  color: #fff;
+}
+.why-card-label { font-size: .9rem; font-weight: 700; color: var(--text); margin-bottom: .2rem; }
+.why-card-desc { font-size: .78rem; color: var(--muted); line-height: 1.5; }
+
+/* legacy — kept for mobile breakpoint reference */
 .feature-tag {
   display: inline-flex; align-items: center; gap: .4rem;
   padding: .38rem .85rem; border-radius: 50px;
@@ -490,8 +511,9 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   nav { display: none; }
-  .sticky-grid, .feature-row { grid-template-columns: 1fr; gap: 2.5rem; }
-  .feature-row.rev { direction: ltr; }
+  .sticky-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .why-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .why-cards { grid-template-columns: 1fr 1fr; }
   .sectors-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .stat-divider { display: none; }
