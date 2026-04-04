@@ -45,7 +45,6 @@ export default function Home() {
         </div>
         <div className="scroll-hint">
           <div className="scroll-hint-line" />
-          <span>Rolar</span>
         </div>
       </section>
 

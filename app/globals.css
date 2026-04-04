@@ -164,8 +164,7 @@ nav a:hover { color: var(--text); }
   opacity: .45;
 }
 .scroll-hint span { font-size: .65rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-.scroll-hint-line { width: 1px; height: 36px; background: linear-gradient(180deg, var(--primary), transparent); animation: scrollLine 1.8s ease-in-out infinite; }
-@keyframes scrollLine { 0%, 100% { transform: scaleY(0); transform-origin: top; } 50% { transform: scaleY(1); transform-origin: top; } }
+.scroll-hint-line { width: 1px; height: 36px; background: linear-gradient(180deg, var(--primary), transparent); }
 
 /* ─── STAT CALLOUT ─── */
 #stat-callout {
