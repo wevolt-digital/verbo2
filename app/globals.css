@@ -291,11 +291,14 @@ nav a:hover { color: var(--text); }
   display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
 }
 .why-card {
+  --rx: 0deg; --ry: 0deg;
   display: flex; align-items: flex-start; gap: 1rem;
   padding: 1.4rem; border-radius: 16px;
   border: 1px solid var(--border); background: var(--surface);
-  transition: transform .15s ease, border-color .3s ease, box-shadow .3s ease;
+  border-color: var(--border); box-shadow: none;
+  transition: border-color .3s ease, box-shadow .3s ease;
   cursor: default; will-change: transform;
+  transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry));
   animation: cardFloat 4s ease-in-out infinite;
   animation-delay: var(--float-delay, 0s);
 }
@@ -305,8 +308,8 @@ nav a:hover { color: var(--text); }
   animation-play-state: paused;
 }
 @keyframes cardFloat {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+  0%, 100% { transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(0px); }
+  50%       { transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-8px); }
 }
 .why-card-icon {
   width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;

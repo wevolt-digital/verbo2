@@ -21,11 +21,13 @@ export default function SplitFeatures() {
       const rect = card.getBoundingClientRect()
       const x = (e.clientX - rect.left) / rect.width - 0.5
       const y = (e.clientY - rect.top) / rect.height - 0.5
-      card.style.transform = `perspective(600px) rotateX(${-y * 12}deg) rotateY(${x * 12}deg) translateY(0px)`
+      card.style.setProperty('--rx', `${-y * 14}deg`)
+      card.style.setProperty('--ry', `${x * 14}deg`)
     }
 
     function onLeave(card: HTMLElement) {
-      card.style.transform = ''
+      card.style.setProperty('--rx', '0deg')
+      card.style.setProperty('--ry', '0deg')
     }
 
     const handlers: { move: (e: MouseEvent) => void; leave: () => void }[] = []
