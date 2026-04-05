@@ -287,8 +287,17 @@ nav a:hover { color: var(--text); }
 }
 .why-title.show .why-title-line { transform: scaleX(1); }
 .why-text p { color: var(--muted); line-height: 1.85; font-size: .95rem; max-width: 480px; }
+.why-cards-wrap {
+  position: relative;
+}
+.why-orbital-canvas {
+  position: absolute; inset: -20% -10%;
+  width: 120%; height: 140%;
+  pointer-events: none; z-index: 0;
+}
 .why-cards {
   display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  position: relative; z-index: 1;
 }
 .why-card {
   display: flex; align-items: flex-start; gap: 1rem;

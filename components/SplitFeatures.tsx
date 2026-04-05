@@ -1,4 +1,5 @@
 import { Satellite, Zap, Clock, Users } from 'lucide-react'
+import WhyOrbital from './WhyOrbital'
 
 const CARDS = [
   { Icon: Satellite, label: 'Starlink + Inmarsat', desc: 'LEO e GEO na mesma solução' },
@@ -24,6 +25,8 @@ export default function SplitFeatures() {
         </div>
 
         {/* Cards direita */}
+        <div className="why-cards-wrap">
+          <WhyOrbital />
         <div className="why-cards">
           {CARDS.map((card, i) => (
             <div key={i} className={`why-card sr-scale d${i + 1}`}>
@@ -36,6 +39,7 @@ export default function SplitFeatures() {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>
