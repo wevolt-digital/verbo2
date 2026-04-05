@@ -40,10 +40,10 @@ export default function WhyOrbital() {
 
     function buildOrbits() {
       ORBITS = [
-        { a: W * .36, b: W * .36 * .25, phi: 10,  spd: .005,  col: '#0BB5E9', w: 1.4, sats: [{ t: 0, trail: [] }] },
-        { a: W * .50, b: W * .50 * .50, phi: 60,  spd: .0035, col: '#1A418C', w: 1.2, sats: [{ t: Math.PI, trail: [] }] },
-        { a: W * .26, b: W * .26 * .38, phi: -45, spd: -.008, col: '#0BB5E9', w: 1.0, sats: [{ t: 1.2, trail: [] }] },
-        { a: W * .62, b: W * .62 * .20, phi: 25,  spd: .0025, col: '#1A418C', w: 0.9, sats: [{ t: 2.5, trail: [] }, { t: 2.5 + Math.PI, trail: [] }] },
+        { a: W * .32, b: W * .32 * .25, phi: 10,  spd: .005,  col: '#0BB5E9', w: 1.4, sats: [{ t: 0, trail: [] }] },
+        { a: W * .44, b: W * .44 * .50, phi: 60,  spd: .0035, col: '#1A418C', w: 1.2, sats: [{ t: Math.PI, trail: [] }] },
+        { a: W * .22, b: W * .22 * .38, phi: -45, spd: -.008, col: '#0BB5E9', w: 1.0, sats: [{ t: 1.2, trail: [] }] },
+        { a: W * .55, b: W * .55 * .20, phi: 25,  spd: .0025, col: '#1A418C', w: 0.9, sats: [{ t: 2.5, trail: [] }, { t: 2.5 + Math.PI, trail: [] }] },
       ]
     }
     buildOrbits()
