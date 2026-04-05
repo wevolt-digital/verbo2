@@ -301,14 +301,12 @@ nav a:hover { color: var(--text); }
   position: relative; z-index: 1; width: 100%;
 }
 .why-card {
-  --rx: 0deg; --ry: 0deg;
   display: flex; align-items: flex-start; gap: 1rem;
   padding: 1.4rem; border-radius: 16px;
   border: 1px solid var(--border); background: rgba(255,255,255,0.7);
   backdrop-filter: blur(6px);
-  transition: border-color .3s ease, box-shadow .3s ease, transform .12s ease;
+  transition: border-color .3s ease, box-shadow .3s ease, transform .1s ease;
   cursor: default; will-change: transform;
-  transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry));
 }
 .why-card:hover {
   border-color: var(--primary);
