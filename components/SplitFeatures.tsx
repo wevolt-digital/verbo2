@@ -16,8 +16,7 @@ export default function SplitFeatures() {
           <span className="eyebrow sr">Por que a VERBO</span>
           <h2 className="why-title sr d1">
             Tecnologia de ponta.<br />
-            <em>Suporte de quem conhece o Brasil.</em>
-            <span className="why-title-line" />
+            Suporte de quem conhece o Brasil.
           </h2>
           <p className="sr d2">
             Somos o único provedor que combina as melhores redes de satélite do mundo — Starlink LEO e Inmarsat GEO — com uma equipe técnica certificada presente em todo o território nacional. Do contrato à ativação, você tem um ponto de contato único e suporte com quem fala a sua língua.
