@@ -287,29 +287,32 @@ nav a:hover { color: var(--text); }
 }
 .why-title.show .why-title-line { transform: scaleX(1); }
 .why-text p { color: var(--muted); line-height: 1.85; font-size: .95rem; max-width: 480px; }
+.why-cards-wrap {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.why-orbital-canvas {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 0;
+}
 .why-cards {
   display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  position: relative; z-index: 1; width: 100%;
 }
 .why-card {
   --rx: 0deg; --ry: 0deg;
   display: flex; align-items: flex-start; gap: 1rem;
   padding: 1.4rem; border-radius: 16px;
-  border: 1px solid var(--border); background: var(--surface);
-  border-color: var(--border); box-shadow: none;
-  transition: border-color .3s ease, box-shadow .3s ease;
+  border: 1px solid var(--border); background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(6px);
+  transition: border-color .3s ease, box-shadow .3s ease, transform .12s ease;
   cursor: default; will-change: transform;
   transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry));
-  animation: cardFloat 4s ease-in-out infinite;
-  animation-delay: var(--float-delay, 0s);
 }
 .why-card:hover {
   border-color: var(--primary);
   box-shadow: 0 12px 40px rgba(26,65,140,.13), inset 0 0 0 1px rgba(26,65,140,.15);
-  animation-play-state: paused;
-}
-@keyframes cardFloat {
-  0%, 100% { transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(0px); }
-  50%       { transform: perspective(700px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-8px); }
 }
 .why-card-icon {
   width: 40px; height: 40px; border-radius: 10px; flex-shrink: 0;

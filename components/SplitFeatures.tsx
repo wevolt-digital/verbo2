@@ -2,12 +2,13 @@
 
 import { useEffect, useRef } from 'react'
 import { Satellite, Zap, Clock, Users } from 'lucide-react'
+import WhyOrbital from './WhyOrbital'
 
 const CARDS = [
-  { Icon: Satellite, label: 'Starlink + Inmarsat', desc: 'LEO e GEO na mesma solução', delay: '0s' },
-  { Icon: Zap, label: 'Instalação no dia', desc: 'Ativo em menos de 2 horas', delay: '0.6s' },
-  { Icon: Clock, label: 'Suporte 24/7', desc: 'Time técnico sempre disponível', delay: '1.1s' },
-  { Icon: Users, label: 'Equipe local', desc: 'Presença em todo o Brasil', delay: '0.3s' },
+  { Icon: Satellite, label: 'Starlink + Inmarsat', desc: 'LEO e GEO na mesma solução' },
+  { Icon: Zap, label: 'Instalação no dia', desc: 'Ativo em menos de 2 horas' },
+  { Icon: Clock, label: 'Suporte 24/7', desc: 'Time técnico sempre disponível' },
+  { Icon: Users, label: 'Equipe local', desc: 'Presença em todo o Brasil' },
 ]
 
 export default function SplitFeatures() {
@@ -64,22 +65,21 @@ export default function SplitFeatures() {
         </div>
 
         {/* Cards direita */}
-        <div className="why-cards" ref={cardsRef}>
-          {CARDS.map((card, i) => (
-            <div
-              key={i}
-              className={`why-card sr-scale d${i + 1}`}
-              style={{ animationDelay: card.delay, '--float-delay': card.delay } as React.CSSProperties}
-            >
-              <div className="why-card-icon">
-                <card.Icon size={22} strokeWidth={1.5} />
+        <div className="why-cards-wrap">
+          <WhyOrbital />
+          <div className="why-cards" ref={cardsRef}>
+            {CARDS.map((card, i) => (
+              <div key={i} className={`why-card sr-scale d${i + 1}`}>
+                <div className="why-card-icon">
+                  <card.Icon size={22} strokeWidth={1.5} />
+                </div>
+                <div>
+                  <div className="why-card-label">{card.label}</div>
+                  <div className="why-card-desc">{card.desc}</div>
+                </div>
               </div>
-              <div>
-                <div className="why-card-label">{card.label}</div>
-                <div className="why-card-desc">{card.desc}</div>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

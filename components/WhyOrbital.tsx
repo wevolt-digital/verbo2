@@ -21,7 +21,7 @@ export default function WhyOrbital() {
       canvas!.width = W * dpr
       canvas!.height = H * dpr
       ctx!.scale(dpr, dpr)
-      cx = W * .75
+      cx = W / 2
       cy = H / 2
     }
     resize()
@@ -40,10 +40,10 @@ export default function WhyOrbital() {
 
     function buildOrbits() {
       ORBITS = [
-        { a: W * .30, b: W * .30 * .25, phi: 10,  spd: .005,  col: '#0BB5E9', w: 1.6, sats: [{ t: 0, trail: [] }] },
-        { a: W * .42, b: W * .42 * .50, phi: 60,  spd: .0035, col: '#1A418C', w: 1.4, sats: [{ t: Math.PI, trail: [] }] },
-        { a: W * .20, b: W * .20 * .38, phi: -45, spd: -.008, col: '#0BB5E9', w: 1.2, sats: [{ t: 1.2, trail: [] }] },
-        { a: W * .52, b: W * .52 * .20, phi: 25,  spd: .0025, col: '#1A418C', w: 1.0, sats: [{ t: 2.5, trail: [] }, { t: 2.5 + Math.PI, trail: [] }] },
+        { a: W * .20, b: W * .20 * .25, phi: 10,  spd: .005,  col: '#0BB5E9', w: 1.4, sats: [{ t: 0, trail: [] }] },
+        { a: W * .30, b: W * .30 * .50, phi: 60,  spd: .0035, col: '#1A418C', w: 1.2, sats: [{ t: Math.PI, trail: [] }] },
+        { a: W * .14, b: W * .14 * .38, phi: -45, spd: -.008, col: '#0BB5E9', w: 1.0, sats: [{ t: 1.2, trail: [] }] },
+        { a: W * .38, b: W * .38 * .20, phi: 25,  spd: .0025, col: '#1A418C', w: 0.9, sats: [{ t: 2.5, trail: [] }, { t: 2.5 + Math.PI, trail: [] }] },
       ]
     }
     buildOrbits()
