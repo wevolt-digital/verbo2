@@ -21,7 +21,7 @@ export default function WhyOrbital() {
       canvas!.width = W * dpr
       canvas!.height = H * dpr
       ctx!.scale(dpr, dpr)
-      cx = W / 2
+      cx = W * .75
       cy = H / 2
     }
     resize()
