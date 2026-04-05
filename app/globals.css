@@ -303,9 +303,7 @@ nav a:hover { color: var(--text); }
 .why-card {
   display: flex; align-items: flex-start; gap: 1rem;
   padding: 1.4rem; border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.5); background: rgba(255,255,255,0.80);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border); background: var(--surface);
   transition: border-color .3s ease, box-shadow .3s ease, transform .1s ease;
   cursor: default; will-change: transform;
 }
