@@ -19,25 +19,41 @@ export default function SplitFeatures() {
     const section = sectionRef.current
     if (!cards.length || !section) return
 
+    let targetX = 0, targetY = 0
+    let currentX = 0, currentY = 0
+    let inside = false
+    let RAF = 0
+
     function onMouseMove(e: MouseEvent) {
       const rect = section!.getBoundingClientRect()
-      const x = (e.clientX - rect.left) / rect.width - 0.5
-      const y = (e.clientY - rect.top) / rect.height - 0.5
-      cards.forEach(card => {
-        card.style.transform = `perspective(700px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg)`
-      })
+      targetX = (e.clientX - rect.left) / rect.width - 0.5
+      targetY = (e.clientY - rect.top) / rect.height - 0.5
+      inside = true
     }
 
     function onMouseLeave() {
+      inside = false
+    }
+
+    function frame() {
+      RAF = requestAnimationFrame(frame)
+      const tx = inside ? targetX : 0
+      const ty = inside ? targetY : 0
+      currentX += (tx - currentX) * 0.08
+      currentY += (ty - currentY) * 0.08
+      const rx = -currentY * 16
+      const ry = currentX * 16
       cards.forEach(card => {
-        card.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg)'
+        card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`
       })
     }
 
+    RAF = requestAnimationFrame(frame)
     section.addEventListener('mousemove', onMouseMove)
     section.addEventListener('mouseleave', onMouseLeave)
 
     return () => {
+      cancelAnimationFrame(RAF)
       section.removeEventListener('mousemove', onMouseMove)
       section.removeEventListener('mouseleave', onMouseLeave)
     }
