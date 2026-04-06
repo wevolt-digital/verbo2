@@ -33,8 +33,10 @@ export default function SplitFeatures() {
 
     function onCardMouseMove(e: MouseEvent, card: HTMLElement) {
       const rect = card.getBoundingClientRect()
-      targetX = (e.clientX - rect.left) / rect.width - 0.5
-      targetY = (e.clientY - rect.top) / rect.height - 0.5
+      const cx = rect.left + rect.width / 2
+      const cy = rect.top + rect.height / 2
+      targetX = (e.clientX - cx) / (rect.width / 2)
+      targetY = (e.clientY - cy) / (rect.height / 2)
       inside = true
     }
 
