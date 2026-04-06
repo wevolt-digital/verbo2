@@ -19,9 +19,9 @@ export default function SplitFeatures() {
 
     // Cada card tem fase e amplitude diferentes para parecerem independentes
     const phases = [0, Math.PI * 0.5, Math.PI, Math.PI * 1.5]
-    const ampX = [8, -6, 7, -9]
-    const ampY = [6, 9, -7, 5]
-    const speeds = [0.6, 0.5, 0.7, 0.55]
+    const ampX = [18, -14, 16, -20]
+    const ampY = [14, 20, -16, 12]
+    const speeds = [0.9, 0.75, 1.0, 0.8]
     const hovered = new Set<HTMLElement>()
 
     let RAF = 0
