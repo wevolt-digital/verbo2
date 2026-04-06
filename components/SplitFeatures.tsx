@@ -31,14 +31,14 @@ export default function SplitFeatures() {
     let inside = false
     let RAF = 0
 
-    function onMouseMove(e: MouseEvent) {
-      const rect = section!.getBoundingClientRect()
+    function onCardMouseMove(e: MouseEvent, card: HTMLElement) {
+      const rect = card.getBoundingClientRect()
       targetX = (e.clientX - rect.left) / rect.width - 0.5
       targetY = (e.clientY - rect.top) / rect.height - 0.5
       inside = true
     }
 
-    function onMouseLeave() {
+    function onCardMouseLeave() {
       inside = false
     }
 
@@ -56,13 +56,22 @@ export default function SplitFeatures() {
     }
 
     RAF = requestAnimationFrame(frame)
-    section.addEventListener('mousemove', onMouseMove)
-    section.addEventListener('mouseleave', onMouseLeave)
+
+    const handlers: { move: (e: MouseEvent) => void; leave: () => void }[] = []
+    cards.forEach(card => {
+      const move = (e: MouseEvent) => onCardMouseMove(e, card)
+      const leave = () => onCardMouseLeave()
+      card.addEventListener('mousemove', move)
+      card.addEventListener('mouseleave', leave)
+      handlers.push({ move, leave })
+    })
 
     return () => {
       cancelAnimationFrame(RAF)
-      section.removeEventListener('mousemove', onMouseMove)
-      section.removeEventListener('mouseleave', onMouseLeave)
+      cards.forEach((card, i) => {
+        card.removeEventListener('mousemove', handlers[i].move)
+        card.removeEventListener('mouseleave', handlers[i].leave)
+      })
     }
   }, [])
 
