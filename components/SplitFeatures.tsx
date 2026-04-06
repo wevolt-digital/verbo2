@@ -15,49 +15,30 @@ export default function SplitFeatures() {
 
   useEffect(() => {
     const cards = Array.from(cardsRef.current?.querySelectorAll<HTMLElement>('.why-card') ?? [])
-    if (!cards.length) return
+    const section = cardsRef.current?.closest('section') as HTMLElement
+    if (!cards.length || !section) return
 
-    // Cada card tem fase e amplitude diferentes para parecerem independentes
-    const phases = [0, Math.PI * 0.5, Math.PI, Math.PI * 1.5]
-    const ampX = [18, -14, 16, -20]
-    const ampY = [14, 20, -16, 12]
-    const speeds = [0.9, 0.75, 1.0, 0.8]
-    const hovered = new Set<HTMLElement>()
-
-    let RAF = 0
-    const start = performance.now()
-
-    function frame() {
-      RAF = requestAnimationFrame(frame)
-      const t = (performance.now() - start) / 1000
-      cards.forEach((card, i) => {
-        if (hovered.has(card)) {
-          card.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg)'
-          return
-        }
-        const rx = ampX[i] * Math.sin(t * speeds[i] + phases[i])
-        const ry = ampY[i] * Math.cos(t * speeds[i] + phases[i] + 1)
-        card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`
+    function onMouseMove(e: MouseEvent) {
+      const rect = section.getBoundingClientRect()
+      const x = (e.clientX - rect.left) / rect.width - 0.5
+      const y = (e.clientY - rect.top) / rect.height - 0.5
+      cards.forEach(card => {
+        card.style.transform = `perspective(700px) rotateX(${-y * 16}deg) rotateY(${x * 16}deg)`
       })
     }
 
-    RAF = requestAnimationFrame(frame)
+    function onMouseLeave() {
+      cards.forEach(card => {
+        card.style.transform = 'perspective(700px) rotateX(0deg) rotateY(0deg)'
+      })
+    }
 
-    const handlers: { enter: () => void; leave: () => void }[] = []
-    cards.forEach(card => {
-      const enter = () => hovered.add(card)
-      const leave = () => hovered.delete(card)
-      card.addEventListener('mouseenter', enter)
-      card.addEventListener('mouseleave', leave)
-      handlers.push({ enter, leave })
-    })
+    section.addEventListener('mousemove', onMouseMove)
+    section.addEventListener('mouseleave', onMouseLeave)
 
     return () => {
-      cancelAnimationFrame(RAF)
-      cards.forEach((card, i) => {
-        card.removeEventListener('mouseenter', handlers[i].enter)
-        card.removeEventListener('mouseleave', handlers[i].leave)
-      })
+      section.removeEventListener('mousemove', onMouseMove)
+      section.removeEventListener('mouseleave', onMouseLeave)
     }
   }, [])
 
