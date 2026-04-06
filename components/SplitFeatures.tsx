@@ -12,14 +12,15 @@ const CARDS = [
 
 export default function SplitFeatures() {
   const cardsRef = useRef<HTMLDivElement>(null)
+  const sectionRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const cards = Array.from(cardsRef.current?.querySelectorAll<HTMLElement>('.why-card') ?? [])
-    const section = cardsRef.current?.closest('section') as HTMLElement
+    const section = sectionRef.current
     if (!cards.length || !section) return
 
     function onMouseMove(e: MouseEvent) {
-      const rect = section.getBoundingClientRect()
+      const rect = section!.getBoundingClientRect()
       const x = (e.clientX - rect.left) / rect.width - 0.5
       const y = (e.clientY - rect.top) / rect.height - 0.5
       cards.forEach(card => {
@@ -43,7 +44,7 @@ export default function SplitFeatures() {
   }, [])
 
   return (
-    <section className="why-section">
+    <section className="why-section" ref={sectionRef}>
       <div className="why-inner">
         {/* Texto esquerda */}
         <div className="why-text">
