@@ -19,6 +19,13 @@ export default function SplitFeatures() {
     const section = sectionRef.current
     if (!cards.length || !section) return
 
+    // Remove a transição de transform herdada do sr-scale após o reveal
+    setTimeout(() => {
+      cards.forEach(card => {
+        card.style.transition = 'border-color .3s ease, box-shadow .3s ease'
+      })
+    }, 1000)
+
     let targetX = 0, targetY = 0
     let currentX = 0, currentY = 0
     let inside = false
