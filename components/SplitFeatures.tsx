@@ -31,6 +31,8 @@ export default function SplitFeatures() {
     let inside = false
     let RAF = 0
 
+    let activeCard: HTMLElement | null = null
+
     function onCardMouseMove(e: MouseEvent, card: HTMLElement) {
       const rect = card.getBoundingClientRect()
       const cx = rect.left + rect.width / 2
@@ -38,10 +40,12 @@ export default function SplitFeatures() {
       targetX = (e.clientX - cx) / (rect.width / 2)
       targetY = (e.clientY - cy) / (rect.height / 2)
       inside = true
+      activeCard = card
     }
 
     function onCardMouseLeave() {
       inside = false
+      activeCard = null
     }
 
     function frame() {
@@ -53,7 +57,11 @@ export default function SplitFeatures() {
       const rx = -currentY * 16
       const ry = currentX * 16
       cards.forEach(card => {
-        card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`
+        if (card === activeCard) {
+          card.style.transform = `perspective(700px) rotateX(${rx}deg) rotateY(${ry}deg)`
+        } else {
+          card.style.transform = `perspective(700px) rotateX(0deg) rotateY(0deg)`
+        }
       })
     }
 
