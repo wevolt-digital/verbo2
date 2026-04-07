@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Target, Telescope, Sparkles } from 'lucide-react'
-import OrbitalCanvas from '@/components/OrbitalCanvas'
 import CTASection from '@/components/CTASection'
 import ScrollInit from '@/components/ScrollInit'
 
@@ -16,21 +15,48 @@ export default function SobrePage() {
       <ScrollInit />
 
       {/* Hero */}
-      <section id="hero">
-        <OrbitalCanvas />
-        <div className="hero-content">
-          <div className="hero-eyebrow sr">
-            <span />
-            Sobre a VERBO
-            <span />
-          </div>
-          <h1 className="sr d1">
-            O movimento que <em>conecta o Brasil</em>
+      <section style={{
+        background: 'linear-gradient(160deg, #FFFFFF 0%, #F0F6FF 50%, #E8F0FF 100%)',
+        minHeight: '38vh',
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: '72px',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        paddingBottom: '60px',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        {/* Decorative grid */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          backgroundImage: 'linear-gradient(rgba(26,65,140,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(26,65,140,.05) 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }} />
+        {/* Radial accent */}
+        <div style={{
+          position: 'absolute', right: '-10%', top: '-20%',
+          width: '600px', height: '600px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(11,181,233,.08) 0%, transparent 65%)',
+          pointerEvents: 'none',
+        }} />
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
+          <span className="eyebrow">Sobre a VERBO</span>
+          <h1 style={{
+            fontSize: 'clamp(2.6rem, 6vw, 4.8rem)',
+            fontWeight: 800,
+            lineHeight: 1.05,
+            letterSpacing: '-.03em',
+            color: 'var(--text)',
+            marginBottom: '1rem',
+          }}>
+            O movimento que{' '}
+            <span className="g-text">conecta o Brasil</span>
           </h1>
-          <p className="sub sr d2">
+          <p style={{ fontSize: '1.1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.75, marginBottom: '2rem' }}>
             Somos uma empresa de tecnologia satelital dedicada a eliminar o isolamento digital no Brasil e no mundo.
           </p>
-          <div className="hero-ctas sr d3">
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
             <Link href="/contato" className="btn-p">
               Fale Conosco <span className="shine" />
             </Link>
