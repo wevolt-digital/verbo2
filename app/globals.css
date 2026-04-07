@@ -385,14 +385,12 @@ nav a:hover { color: var(--text); }
 #quote blockquote {
   font-size: clamp(1.7rem, 4vw, 3.4rem); font-weight: 700;
   line-height: 1.22; letter-spacing: -.025em;
-  max-width: 880px; margin: 0 auto; color: #fff;
-  will-change: transform;
+  max-width: 880px; margin: 0 auto;
 }
 #quote cite {
   display: block; font-size: .82rem; font-style: normal;
   color: rgba(255,255,255,.4); margin-top: 2.5rem;
   font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
-  will-change: transform;
 }
 
 /* ─── COVERAGE MAP ─── */
