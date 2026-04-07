@@ -93,7 +93,7 @@ export default function CoverageMap() {
                     fontFamily: 'inherit',
                     fontSize: '10px',
                     fontWeight: 600,
-                    fill: '#fff',
+                    fill: '#000',
                     pointerEvents: 'none',
                   }}
                 >
