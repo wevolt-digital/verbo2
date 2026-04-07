@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps'
-import AnimatedCounter from './AnimatedCounter'
 
 const GEO_URL = '/world-110m.json'
 
@@ -106,20 +105,6 @@ export default function CoverageMap() {
         </div>
       </div>
 
-      <div className="coverage-stats sr d3">
-        <div className="cov-stat">
-          <div className="cov-num"><AnimatedCounter value={100} /><em>%</em></div>
-          <div className="cov-label">Território Coberto</div>
-        </div>
-        <div className="cov-stat">
-          <div className="cov-num"><AnimatedCounter value={5563} localeFormat /><em>+</em></div>
-          <div className="cov-label">Municípios Atendidos</div>
-        </div>
-        <div className="cov-stat">
-          <div className="cov-num"><AnimatedCounter value={365} /></div>
-          <div className="cov-label">Dias por ano disponível</div>
-        </div>
-      </div>
     </section>
   )
 }
