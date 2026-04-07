@@ -7,7 +7,7 @@ import type { LucideIcon } from 'lucide-react'
 const SECTORS: { Icon: LucideIcon; title: string; desc: string; video?: string }[] = [
   { Icon: Wheat,        title: 'Agronegócio',        desc: 'Rastreamento, gestão de ativos remotos, operações de produtividade na cadeia de suprimentos.', video: '/setores/setor-agro.mp4' },
   { Icon: Truck,        title: 'Logística',           desc: 'Cibersegurança, bem-estar da tripulação, gestão de rotas e conformidade ambiental para a frota mercante.', video: '/setores/setor-logistica.mp4' },
-  { Icon: Landmark,     title: 'Governo',             desc: 'Comunicação satelital segura e eficiente para operações militares, serviços públicos e resposta a emergências.' },
+  { Icon: Landmark,     title: 'Governo',             desc: 'Comunicação satelital segura e eficiente para operações militares, serviços públicos e resposta a emergências.', video: '/setores/setor-governo.mp4' },
   { Icon: Plane,        title: 'Aviação',             desc: 'Da decolagem ao pouso: conectividade para segurança de voo, comunicação de cabine e experiência do passageiro.' },
   { Icon: CalendarDays, title: 'Eventos',             desc: 'Transmissão ao vivo, credenciamento e conectividade para eventos em locais sem infraestrutura.' },
   { Icon: HardHat,      title: 'Construção Civil',    desc: 'Canteiros de obras conectados para gestão de projetos, videoconferência e IoT industrial.' },
