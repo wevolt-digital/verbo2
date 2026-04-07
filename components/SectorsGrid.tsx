@@ -10,7 +10,7 @@ const SECTORS: { Icon: LucideIcon; title: string; desc: string; video?: string }
   { Icon: Landmark,     title: 'Governo',             desc: 'Comunicação satelital segura e eficiente para operações militares, serviços públicos e resposta a emergências.', video: '/setores/setor-governo.mp4' },
   { Icon: Plane,        title: 'Aviação',             desc: 'Da decolagem ao pouso: conectividade para segurança de voo, comunicação e experiência do passageiro.', video: '/setores/setor-aero.mp4' },
   { Icon: CalendarDays, title: 'Eventos',             desc: 'Transmissão ao vivo, credenciamento e conectividade para eventos em locais sem infraestrutura.', video: '/setores/setor-eventos.mp4' },
-  { Icon: HardHat,      title: 'Construção Civil',    desc: 'Canteiros de obras conectados para gestão de projetos, videoconferência e IoT industrial.' },
+  { Icon: HardHat,      title: 'Construção Civil',    desc: 'Canteiros de obras conectados para gestão de projetos, videoconferência e IoT industrial.', video: '/setores/setor-construcao.mp4' },
 ]
 
 export default function SectorsGrid() {
