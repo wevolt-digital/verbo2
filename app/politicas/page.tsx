@@ -86,6 +86,13 @@ export default function PoliticasPage() {
           background: 'radial-gradient(circle, rgba(11,181,233,.08) 0%, transparent 65%)',
           pointerEvents: 'none',
         }} />
+        {/* Pulse sonar */}
+        <div className="hero-pulse-wrap">
+          <div className="hero-pulse-ring" />
+          <div className="hero-pulse-ring" />
+          <div className="hero-pulse-ring" />
+          <div className="hero-pulse-dot" />
+        </div>
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
           <span className="eyebrow">Legal</span>
           <h1 style={{

@@ -538,6 +538,38 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 .policy-section p, .policy-section li { font-size: .9rem; color: var(--muted); line-height: 1.8; margin-bottom: .75rem; }
 .policy-section ul { padding-left: 1.5rem; }
 
+/* ─── HERO PULSE (sonar/satélite) ─── */
+@keyframes hero-pulse {
+  0%   { transform: scale(0.4); opacity: .55; }
+  100% { transform: scale(3.2); opacity: 0; }
+}
+.hero-pulse-wrap {
+  position: absolute;
+  right: 8%;
+  bottom: -10%;
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+}
+.hero-pulse-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(11, 181, 233, 0.45);
+  animation: hero-pulse 3.6s ease-out infinite;
+}
+.hero-pulse-ring:nth-child(2) { animation-delay: 1.2s; }
+.hero-pulse-ring:nth-child(3) { animation-delay: 2.4s; }
+.hero-pulse-dot {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(11, 181, 233, 0.7);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(11, 181, 233, 0.5);
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   nav { display: none; }
