@@ -47,8 +47,8 @@ export default function CoverageMap() {
           projectionConfig={{ scale: 155 }}
         >
           <Geographies geography={GEO_URL}>
-            {({ geographies }) =>
-              geographies.map((geo) => {
+            {({ geographies }: { geographies: any[] }) =>
+              geographies.map((geo: any) => {
                 const id     = String(geo.id).padStart(3, '0')
                 const active = ACTIVE_COUNTRIES.has(id)
                 return (
