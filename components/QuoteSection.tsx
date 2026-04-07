@@ -5,39 +5,45 @@ import { useRef, useEffect } from 'react'
 const QUOTE = 'VERBO é o movimento que conecta o Brasil, levando sinal onde a distância deixou de ser barreira e a tecnologia orbital tornou tudo possível.'
 
 export default function QuoteSection() {
-  const blockRef = useRef<HTMLQuoteElement>(null)
-  const words = QUOTE.split(' ')
+  const sectionRef = useRef<HTMLElement>(null)
+  const blockRef  = useRef<HTMLQuoteElement>(null)
+  const citeRef   = useRef<HTMLElement>(null)
+  const rafRef    = useRef<number>(0)
 
   useEffect(() => {
-    const el = blockRef.current
-    if (!el) return
+    const section = sectionRef.current
+    const block   = blockRef.current
+    const cite    = citeRef.current
+    if (!section || !block || !cite) return
 
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            const highlights = el.querySelectorAll<HTMLElement>('.word-highlight')
-            highlights.forEach((w, i) => setTimeout(() => w.classList.add('lit'), i * 55))
-            obs.unobserve(el)
-          }
-        })
-      },
-      { threshold: 0.3 }
-    )
-    obs.observe(el)
-    return () => obs.disconnect()
+    function update() {
+      const rect = section!.getBoundingClientRect()
+      const vh   = window.innerHeight
+      // normaliza: -1 (acima do viewport) → 0 (centro) → 1 (abaixo)
+      const progress = 1 - (rect.top + rect.height / 2) / vh
+      block!.style.transform = `translateY(${-progress * 32}px)`
+      cite!.style.transform  = `translateY(${-progress * 16}px)`
+    }
+
+    function onScroll() {
+      cancelAnimationFrame(rafRef.current)
+      rafRef.current = requestAnimationFrame(update)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    update()
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(rafRef.current)
+    }
   }, [])
 
   return (
-    <section id="quote">
+    <section id="quote" ref={sectionRef}>
       <div className="quote-inner">
-        <span className="eyebrow" style={{ color: 'var(--cyan2)', opacity: .8 }}>Missão VERBO</span>
-        <blockquote ref={blockRef}>
-          {words.map((word, i) => (
-            <span key={i} className="word-highlight">{word} </span>
-          ))}
-        </blockquote>
-        <cite>— Equipe VERBO · Conectando o Brasil Orbital</cite>
+        <span className="eyebrow" style={{ color: 'var(--cyan2)', opacity: .8 }}>Missão</span>
+        <blockquote ref={blockRef}>{QUOTE}</blockquote>
+        <cite ref={citeRef}>VERBO, AÇÃO QUE CONECTA.</cite>
       </div>
     </section>
   )
