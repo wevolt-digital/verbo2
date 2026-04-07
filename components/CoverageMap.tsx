@@ -22,10 +22,10 @@ const ACTIVE_COUNTRIES = new Set([
 const EXCLUDED = new Set(['010'])
 
 const BRAZIL_CITIES = [
-  { name: 'Belo Horizonte', coords: [-43.9345, -19.9167] as [number, number] },
-  { name: 'Brasília',       coords: [-47.9297, -15.7801] as [number, number] },
-  { name: 'Rio de Janeiro', coords: [-43.1729, -22.9068] as [number, number] },
-  { name: 'Belém',          coords: [-48.5044,  -1.4558] as [number, number] },
+  { name: 'Belo Horizonte', coords: [-43.9345, -19.9167] as [number, number], anchor: 'start'  as const, dx: 6,  dy: 4   },
+  { name: 'Brasília',       coords: [-47.9297, -15.7801] as [number, number], anchor: 'end'    as const, dx: -6, dy: -8  },
+  { name: 'Rio de Janeiro', coords: [-43.1729, -22.9068] as [number, number], anchor: 'start'  as const, dx: 6,  dy: 4   },
+  { name: 'Belém',          coords: [-48.5044,  -1.4558] as [number, number], anchor: 'middle' as const, dx: 0,  dy: -10 },
 ]
 
 const PRIMARY       = '#1a418c'
@@ -86,12 +86,16 @@ export default function CoverageMap() {
               <circle r={4} fill="#0bb5e9" stroke="none" style={{ cursor: 'pointer' }} />
               {hoveredCity === city.name && (
                 <text
-                  textAnchor="middle"
-                  y={-10}
+                  textAnchor={city.anchor}
+                  x={city.dx}
+                  y={city.dy}
+                  stroke="#fff"
+                  strokeWidth={3}
+                  paintOrder="stroke"
                   style={{
                     fontFamily: 'inherit',
                     fontSize: '10px',
-                    fontWeight: 600,
+                    fontWeight: 700,
                     fill: '#000',
                     pointerEvents: 'none',
                   }}
