@@ -17,13 +17,13 @@ export default function SobrePage() {
       {/* Hero */}
       <section style={{
         background: 'linear-gradient(160deg, #FFFFFF 0%, #F0F6FF 50%, #E8F0FF 100%)',
-        minHeight: '38vh',
+        minHeight: '52vh',
         display: 'flex',
         alignItems: 'center',
-        paddingTop: '72px',
+        paddingTop: '120px',
         paddingLeft: '5%',
         paddingRight: '5%',
-        paddingBottom: '60px',
+        paddingBottom: '80px',
         position: 'relative',
         overflow: 'hidden',
       }}>
@@ -32,13 +32,6 @@ export default function SobrePage() {
           position: 'absolute', inset: 0,
           backgroundImage: 'linear-gradient(rgba(26,65,140,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(26,65,140,.05) 1px, transparent 1px)',
           backgroundSize: '48px 48px',
-        }} />
-        {/* Radial accent */}
-        <div style={{
-          position: 'absolute', right: '-10%', top: '-20%',
-          width: '600px', height: '600px', borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(11,181,233,.08) 0%, transparent 65%)',
-          pointerEvents: 'none',
         }} />
         <HeroParticles />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', width: '100%', textAlign: 'center' }}>
