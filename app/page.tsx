@@ -103,7 +103,7 @@ export default function Home() {
         <div className="sectors-header sr">
           <span className="eyebrow">Setores de atuação</span>
           <h2>Conectamos onde a operação não pode parar.</h2>
-          <p>Da roça ao canteiro de obras, da floresta ao mar. A VERBO atende os setores mais críticos com a mesma excelência.</p>
+          <p>Atuamos nos ambientes mais desafiadores, levando conectividade de alta performance aos setores mais críticos.</p>
         </div>
         <SectorsGrid />
       </section>
