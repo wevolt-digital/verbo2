@@ -19,6 +19,9 @@ const ACTIVE_COUNTRIES = new Set([
   '196', // Chipre
 ])
 
+// Antártica (010) — não exibir
+const EXCLUDED = new Set(['010'])
+
 const BRAZIL_CITIES = [
   { name: 'Belo Horizonte', coords: [-43.9345, -19.9167] as [number, number] },
   { name: 'Brasília',       coords: [-47.9297, -15.7801] as [number, number] },
@@ -26,8 +29,9 @@ const BRAZIL_CITIES = [
   { name: 'Belém',          coords: [-48.5044,  -1.4558] as [number, number] },
 ]
 
-const PRIMARY = '#1a418c'
+const PRIMARY       = '#1a418c'
 const PRIMARY_HOVER = '#1e4fa8'
+const STROKE        = 'rgba(26,65,140,.35)'
 
 export default function CoverageMap() {
   const [hoveredCity, setHoveredCity] = useState<string | null>(null)
@@ -41,31 +45,34 @@ export default function CoverageMap() {
       </div>
 
       <div className="coverage-map-wrap sr-scale d2">
+        <div className="map-grid-lines" />
         <ComposableMap
           projection="geoNaturalEarth1"
-          style={{ width: '100%', height: 'auto' }}
-          projectionConfig={{ scale: 155 }}
+          style={{ width: '100%', height: 'auto', position: 'relative', zIndex: 1 }}
+          projectionConfig={{ scale: 155, center: [0, 10] }}
         >
           <Geographies geography={GEO_URL}>
             {({ geographies }: { geographies: any[] }) =>
-              geographies.map((geo: any) => {
-                const id     = String(geo.id).padStart(3, '0')
-                const active = ACTIVE_COUNTRIES.has(id)
-                return (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    fill={active ? PRIMARY : 'transparent'}
-                    stroke="#334155"
-                    strokeWidth={0.4}
-                    style={{
-                      default:  { outline: 'none' },
-                      hover:    { outline: 'none', fill: active ? PRIMARY_HOVER : 'rgba(255,255,255,.05)' },
-                      pressed:  { outline: 'none' },
-                    }}
-                  />
-                )
-              })
+              geographies
+                .filter((geo: any) => !EXCLUDED.has(String(geo.id).padStart(3, '0')))
+                .map((geo: any) => {
+                  const id     = String(geo.id).padStart(3, '0')
+                  const active = ACTIVE_COUNTRIES.has(id)
+                  return (
+                    <Geography
+                      key={geo.rsmKey}
+                      geography={geo}
+                      fill={active ? PRIMARY : 'transparent'}
+                      stroke={STROKE}
+                      strokeWidth={0.5}
+                      style={{
+                        default: { outline: 'none' },
+                        hover:   { outline: 'none', fill: active ? PRIMARY_HOVER : 'rgba(26,65,140,.06)' },
+                        pressed: { outline: 'none' },
+                      }}
+                    />
+                  )
+                })
             }
           </Geographies>
 
@@ -85,9 +92,8 @@ export default function CoverageMap() {
                     fontFamily: 'inherit',
                     fontSize: '10px',
                     fontWeight: 600,
-                    fill: '#fff',
+                    fill: PRIMARY,
                     pointerEvents: 'none',
-                    textShadow: '0 1px 4px rgba(0,0,0,.8)',
                   }}
                 >
                   {city.name}
