@@ -15,6 +15,7 @@ export default function MarqueeBar() {
   const doubled = [...LOGOS, ...LOGOS]
   return (
     <div id="marquee-section">
+      <p className="marquee-title sr d2">Empresas que confiam nas soluções de conectividade VERBO</p>
       <div className="marquee-track">
         {doubled.map((logo, i) => (
           <div key={i} className="marquee-item">
