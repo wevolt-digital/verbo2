@@ -73,30 +73,15 @@ export default function SobrePage() {
               Isso nos permite oferecer a cada usuário soluções mais rápidas, melhores e mais flexíveis. Em outras palavras, conexões que não apenas funcionam, elas se destacam.
             </p>
           </div>
-          <div className="sr-right" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <svg viewBox="0 0 400 400" width="100%" style={{ maxWidth: 360 }}>
-              <defs>
-                <radialGradient id="earthGrad" cx="50%" cy="50%" r="50%">
-                  <stop offset="0%" stopColor="#3DD6FF" stopOpacity="0.3"/>
-                  <stop offset="60%" stopColor="#0BB5E9" stopOpacity="0.15"/>
-                  <stop offset="100%" stopColor="#1A418C" stopOpacity="0.05"/>
-                </radialGradient>
-              </defs>
-              <circle cx="200" cy="200" r="60" fill="url(#earthGrad)" stroke="#0BB5E9" strokeWidth="1" strokeOpacity="0.3"/>
-              <circle cx="200" cy="200" r="30" fill="#0BB5E9" fillOpacity="0.15" stroke="#3DD6FF" strokeWidth="1.5" strokeOpacity="0.5"/>
-              <ellipse cx="200" cy="200" rx="120" ry="45" fill="none" stroke="#0BB5E9" strokeWidth="1" strokeOpacity="0.25" strokeDasharray="4 3">
-                <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="12s" repeatCount="indefinite"/>
-              </ellipse>
-              <ellipse cx="200" cy="200" rx="155" ry="70" fill="none" stroke="#3DD6FF" strokeWidth="0.8" strokeOpacity="0.2" strokeDasharray="3 4">
-                <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="20s" repeatCount="indefinite"/>
-              </ellipse>
-              <circle cx="320" cy="200" r="5" fill="#0BB5E9" fillOpacity="0.8">
-                <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="12s" repeatCount="indefinite"/>
-              </circle>
-              <circle cx="355" cy="200" r="4" fill="#3DD6FF" fillOpacity="0.7">
-                <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="20s" repeatCount="indefinite"/>
-              </circle>
-            </svg>
+          <div className="sr-right" style={{ width: '100%' }}>
+            <div style={{
+              width: '100%',
+              aspectRatio: '4 / 3',
+              borderRadius: '20px',
+              background: 'linear-gradient(135deg, #E8F0FF 0%, #C8D8F8 100%)',
+              border: '1px solid var(--border)',
+              boxShadow: '0 8px 40px rgba(26,65,140,.08)',
+            }} />
           </div>
         </div>
       </section>
