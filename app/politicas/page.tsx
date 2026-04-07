@@ -5,48 +5,32 @@ import HeroParticles from '@/components/HeroParticles'
 
 const sections = [
   {
-    id: 'privacidade',
-    title: 'Política de Privacidade',
+    id: 'etica',
+    title: 'Canal de ética e conduta',
+    cta: { label: 'Relatar ocorrência em nosso canal de denúncias', href: '#' },
     content: [
-      { h: null, p: 'A VERBO Telecomunicações Ltda. está comprometida com a proteção da sua privacidade. Esta Política descreve como coletamos, usamos e protegemos suas informações pessoais.' },
-      { h: 'Dados que coletamos', p: 'Coletamos informações fornecidas diretamente, como nome, empresa, e-mail e telefone em formulários de contato. Também coletamos dados de navegação de forma anônima para melhorar nossa plataforma.' },
-      { h: 'Como usamos seus dados', p: 'Utilizamos seus dados para prestar os serviços contratados, enviar comunicações relevantes, realizar suporte técnico e cumprir obrigações legais e regulatórias.' },
-      { h: 'Compartilhamento', p: 'Não vendemos suas informações. Compartilhamos dados apenas com parceiros essenciais à prestação do serviço e quando exigido por lei.' },
-      { h: 'Segurança', p: 'Adotamos medidas técnicas e organizacionais para proteger seus dados, incluindo criptografia SSL, controle de acesso e monitoramento contínuo.' },
+      { h: null, p: 'A VERBO conta com esse canal para que toda pessoa que se relaciona direta ou indiretamente conosco (colaboradores, clientes, franqueados, acionistas, fornecedores, parceiros e sociedade na qual estamos inseridos) possam comunicar com confidencialidade uma situação que possa caracterizar uma violação do Código de Ética e Conduta VERBO, demais normas internas ou à legislação vigente.' },
+      { h: null, p: 'As informações aqui registradas serão recebidas por uma empresa independente e especializada, assegurando sigilo absoluto e o tratamento adequado de cada situação pela VERBO sem conflitos de interesses.' },
+      { h: null, p: 'Lembrando que o/a declarante é responsável pela veracidade das informações relatadas.' },
+      { h: null, p: 'Para relatar algum fato, clique em "Relatar ocorrência". Siga os passos para relatar o incidente de forma sigilosa. Ao final, você receberá um número de protocolo.' },
+      { h: null, p: 'Esse canal tem como objetivo recepcionar as denúncias relacionadas a qualquer conduta inapropriada que fere os princípios éticos definidos no Código de Ética e Conduta e/ou na legislação vigente, como: fraudes internas, conflitos de interesses, irregularidades em processos contábeis e financeiros, governança corporativa, situações relacionadas à corrupção e demais irregularidades previstas nas Leis anticorrupção aplicáveis, incluindo a Lei nº 12.846/2013.' },
+      { h: null, p: 'Para esclarecimentos, reclamações, elogios ou sugestões de outros assuntos, por favor acesse a nossa página de contato e conheça os outros canais de comunicação conosco.' },
     ],
   },
   {
-    id: 'termos',
-    title: 'Termos de Uso',
+    id: 'socioambiental',
+    title: 'Responsabilidade socioambiental',
+    cta: null,
     content: [
-      { h: null, p: 'Ao utilizar os serviços da VERBO, você concorda com estes Termos de Uso. Leia com atenção antes de contratar ou utilizar qualquer solução VERBO.' },
-      { h: 'Uso permitido', p: 'O serviço destina-se exclusivamente ao uso legítimo e lícito. É proibido utilizar nossa infraestrutura para atividades ilegais, envio de spam ou ataques cibernéticos.' },
-      { h: 'Responsabilidades', p: 'A VERBO compromete-se a manter o serviço disponível conforme o SLA contratado. O cliente é responsável pela segurança de sua rede interna.' },
-      { h: 'Suspensão e cancelamento', p: 'A VERBO reserva-se o direito de suspender serviços em caso de inadimplência ou uso indevido, com notificação prévia de 48 horas.' },
-    ],
-  },
-  {
-    id: 'cookies',
-    title: 'Política de Cookies',
-    content: [
-      { h: null, p: 'Utilizamos cookies para melhorar sua experiência em nosso site, analisar o tráfego e personalizar conteúdo.' },
-      { h: 'Tipos de cookies', p: 'Essenciais: necessários para o funcionamento básico. Analíticos: nos ajudam a entender como você usa o site (Google Analytics com IP anonimizado). Funcionais: lembram suas preferências de navegação.' },
-      { h: 'Como gerenciar', p: 'Você pode gerenciar ou desativar cookies nas configurações do seu navegador. A desativação de cookies essenciais pode afetar o funcionamento do site.' },
-    ],
-  },
-  {
-    id: 'lgpd',
-    title: 'LGPD — Lei Geral de Proteção de Dados',
-    content: [
-      { h: null, p: 'A VERBO está em conformidade com a Lei nº 13.709/2018 (LGPD). Como titular dos seus dados pessoais, você possui direitos garantidos por lei.' },
-      { h: 'Seus direitos', p: 'Confirmação de existência de tratamento; acesso aos dados; correção de dados incorretos; anonimização ou eliminação de dados desnecessários; portabilidade; revogação do consentimento a qualquer momento.' },
-      { h: 'DPO e canal de contato', p: 'Nosso Encarregado de Proteção de Dados (DPO) está disponível em privacidade@verbo.com.br. Respondemos solicitações em até 15 dias úteis, conforme a LGPD.' },
+      { h: null, p: 'A tecnologia tem um papel fundamental na construção de um futuro mais sustentável e inclusivo. Na VERBO, a responsabilidade socioambiental guia nossas ações, garantindo que a inovação esteja a serviço da sociedade sem comprometer o meio ambiente.' },
+      { h: null, p: 'Nosso Programa de Integridade reforça esse compromisso, assegurando que operamos com ética, transparência e respeito aos direitos fundamentais. A conectividade, dentro desse contexto, é um vetor de transformação, permitindo que comunidades em áreas remotas tenham acesso a serviços essenciais, como educação, saúde e oportunidades econômicas.' },
+      { h: null, p: 'Ao investir em soluções tecnológicas sustentáveis, contribuímos para a inclusão digital e o desenvolvimento responsável, conectando pessoas sem os impactos ambientais de grandes infraestruturas físicas. Esse é o nosso compromisso: promover um mundo mais conectado, ético e sustentável.' },
     ],
   },
 ]
 
 export default function PoliticasPage() {
-  const [active, setActive] = useState('privacidade')
+  const [active, setActive] = useState('etica')
 
   const current = sections.find(s => s.id === active)!
 
@@ -123,6 +107,16 @@ export default function PoliticasPage() {
               <p>{block.p}</p>
             </div>
           ))}
+          {current.cta && (
+            <a
+              href={current.cta.href}
+              className="btn-p"
+              style={{ display: 'inline-flex', marginTop: '2rem' }}
+            >
+              {current.cta.label}
+              <span className="shine" />
+            </a>
+          )}
         </div>
       </div>
     </>
