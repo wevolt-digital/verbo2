@@ -41,7 +41,7 @@ export default function CoverageMap() {
       <div className="coverage-label sr">
         <span className="eyebrow">Mapa de cobertura</span>
         <h2>Disponível em todo o Brasil.</h2>
-        <p>Nossa constelação garante cobertura contínua sobre o território nacional, 24 horas por dia, 365 dias por ano.</p>
+        <p>A VERBO possui escritórios distribuídos em cinco continentes, incluindo Austrália, Nova Zelândia, Indonésia, EUA, Brasil, Colômbia, Holanda, Grécia e Chipre. Todos os pontos de contato com o cliente são locais, com suporte de uma equipe experiente. No Brasil, temos escritórios em Belo Horizonte, Brasília, Rio de Janeiro e Belém.</p>
       </div>
 
       <div className="coverage-map-wrap sr-scale d2">
