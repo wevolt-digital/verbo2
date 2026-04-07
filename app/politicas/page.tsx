@@ -89,7 +89,7 @@ export default function PoliticasPage() {
           pointerEvents: 'none',
         }} />
         <HeroParticles />
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', width: '100%', textAlign: 'center' }}>
           <span className="eyebrow">Legal</span>
           <h1 style={{
             fontSize: 'clamp(2.6rem, 6vw, 4.8rem)',
@@ -102,7 +102,7 @@ export default function PoliticasPage() {
             Políticas{' '}
             <span className="g-text">e Termos</span>
           </h1>
-          <p style={{ fontSize: '1.1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.75 }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.75, margin: '0 auto' }}>
             Transparência e respeito são parte dos nossos valores. Conheça como tratamos seus dados.
           </p>
         </div>

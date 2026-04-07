@@ -41,7 +41,7 @@ export default function SobrePage() {
           pointerEvents: 'none',
         }} />
         <HeroParticles />
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', width: '100%', textAlign: 'center' }}>
           <span className="eyebrow">Sobre a VERBO</span>
           <h1 style={{
             fontSize: 'clamp(2.6rem, 6vw, 4.8rem)',
@@ -56,7 +56,7 @@ export default function SobrePage() {
               <span className="g-text">conecta o Brasil</span>
             </span>
           </h1>
-          <p style={{ fontSize: '1.1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.75 }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.75, margin: '0 auto' }}>
             Somos uma empresa de soluções móveis via satélite dedicada a eliminar o isolamento digital.
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function SobrePage() {
             <h2 style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, marginBottom: '1.2rem', color: 'var(--text)' }}>
               Simples, acessível{' '}
               <span className="hero-block-line">
-                <span className="g-text">e sem fronteiras</span>
+                e <span className="g-text">sem fronteiras</span>
               </span>
             </h2>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
