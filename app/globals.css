@@ -538,6 +538,32 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 .policy-section p, .policy-section li { font-size: .9rem; color: var(--muted); line-height: 1.8; margin-bottom: .75rem; }
 .policy-section ul { padding-left: 1.5rem; }
 
+/* ─── HERO WAVEFORM (sinal de frequência) ─── */
+@keyframes hero-wave-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-1000px); }
+}
+.hero-wave-wrap {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.3;
+}
+.hero-wave-svg {
+  position: absolute;
+  bottom: 0;
+  animation: hero-wave-scroll 10s linear infinite;
+}
+.hero-wave-svg--2 {
+  animation-duration: 16s;
+  animation-direction: reverse;
+  opacity: 0.55;
+}
+
 /* ─── HERO PULSE (sonar/satélite) ─── */
 @keyframes hero-pulse {
   0%   { transform: scale(0.4); opacity: .55; }
