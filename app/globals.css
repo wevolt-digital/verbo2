@@ -557,6 +557,7 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   border-radius: 50%;
   background: rgba(11, 181, 233, 0.75);
   animation: particle-rise linear infinite;
+  animation-fill-mode: backwards;
   box-shadow: 0 0 4px rgba(11, 181, 233, 0.4);
 }
 
