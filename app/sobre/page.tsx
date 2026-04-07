@@ -57,7 +57,7 @@ export default function SobrePage() {
             </span>
           </h1>
           <p style={{ fontSize: '1.1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.75 }}>
-            Somos uma empresa de tecnologia satelital dedicada a eliminar o isolamento digital no Brasil e no mundo.
+            Somos uma empresa de soluções móveis via satélite dedicada a eliminar o isolamento digital.
           </p>
         </div>
       </section>
@@ -68,13 +68,16 @@ export default function SobrePage() {
           <div className="sr-left">
             <div className="eyebrow">Nossa Essência</div>
             <h2 style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, marginBottom: '1.2rem', color: 'var(--text)' }}>
-              Simples, acessível <span className="g-text">e sem fronteiras</span>
+              Simples, acessível{' '}
+              <span className="hero-block-line">
+                <span className="g-text">e sem fronteiras</span>
+              </span>
             </h2>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               Acreditamos que soluções móveis via satélite devem ser simples e acessíveis. Por isso, desenvolvemos nossa própria rede terrestre exclusiva para conectar você a soluções incomparáveis, com as redes móveis por satélite mais confiáveis do mundo.
             </p>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8 }}>
-              Isso nos permite oferecer a cada usuário soluções mais rápidas, melhores e mais flexíveis. Em outras palavras, conexões que não apenas funcionam — elas se destacam.
+              Isso nos permite oferecer a cada usuário soluções mais rápidas, melhores e mais flexíveis. Em outras palavras, conexões que não apenas funcionam, elas se destacam.
             </p>
           </div>
           <div className="sr-right" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
