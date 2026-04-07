@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import HeroParticles from '@/components/HeroParticles'
 
 const sections = [
@@ -46,23 +46,13 @@ const sections = [
 ]
 
 export default function PoliticasPage() {
-  const [activeSection, setActiveSection] = useState('privacidade')
+  const [active, setActive] = useState('privacidade')
 
-  useEffect(() => {
-    const els = document.querySelectorAll<HTMLElement>('.policy-section')
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => { if (e.isIntersecting) setActiveSection(e.target.id) })
-      },
-      { rootMargin: '-30% 0px -60% 0px' }
-    )
-    els.forEach((el) => obs.observe(el))
-    return () => obs.disconnect()
-  }, [])
+  const current = sections.find(s => s.id === active)!
 
   return (
     <>
-      {/* ── Hero (light, sem canvas) ── */}
+      {/* ── Hero ── */}
       <section style={{
         background: 'linear-gradient(160deg, #FFFFFF 0%, #F0F6FF 50%, #E8F0FF 100%)',
         minHeight: '52vh',
@@ -75,7 +65,6 @@ export default function PoliticasPage() {
         position: 'relative',
         overflow: 'hidden',
       }}>
-        {/* Decorative grid */}
         <div style={{
           position: 'absolute', inset: 0,
           backgroundImage: 'linear-gradient(rgba(26,65,140,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(26,65,140,.05) 1px, transparent 1px)',
@@ -112,38 +101,27 @@ export default function PoliticasPage() {
             padding: '1.5rem',
             boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
           }}>
-            <h4 style={{ fontSize: '.68rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: 'var(--muted)', marginBottom: '1rem' }}>
-              Índice
-            </h4>
             {sections.map((s) => (
-              <a
+              <button
                 key={s.id}
-                href={`#${s.id}`}
-                className={`sidebar-link${activeSection === s.id ? ' active' : ''}`}
+                onClick={() => setActive(s.id)}
+                className={`sidebar-link${active === s.id ? ' active' : ''}`}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', width: '100%', textAlign: 'left' }}
               >
                 {s.title}
-              </a>
+              </button>
             ))}
           </div>
         </aside>
 
         {/* Content */}
-        <div>
-          {sections.map((section, si) => (
-            <section
-              key={section.id}
-              id={section.id}
-              className="policy-section"
-              style={{ borderBottom: si < sections.length - 1 ? '1px solid var(--border)' : 'none' }}
-            >
-              <h2>{section.title}</h2>
-              {section.content.map((block, i) => (
-                <div key={i}>
-                  {block.h && <h3>{block.h}</h3>}
-                  <p>{block.p}</p>
-                </div>
-              ))}
-            </section>
+        <div key={active} className="policy-section policy-fade" style={{ borderBottom: 'none' }}>
+          <h2>{current.title}</h2>
+          {current.content.map((block, i) => (
+            <div key={i}>
+              {block.h && <h3>{block.h}</h3>}
+              <p>{block.p}</p>
+            </div>
           ))}
         </div>
       </div>

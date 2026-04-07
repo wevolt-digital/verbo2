@@ -538,6 +538,13 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 .policy-section p, .policy-section li { font-size: .9rem; color: var(--muted); line-height: 1.8; margin-bottom: .75rem; }
 .policy-section ul { padding-left: 1.5rem; }
 
+/* ─── POLICIES TABS ─── */
+@keyframes policy-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.policy-fade { animation: policy-fade-in .3s ease forwards; }
+
 /* ─── INFRA SLIDER ─── */
 @keyframes infra-in {
   from { opacity: 0; transform: translateY(14px); }
