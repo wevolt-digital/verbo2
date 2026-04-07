@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Mail, Phone, MapPin } from 'lucide-react'
-import OrbitalCanvas from '@/components/OrbitalCanvas'
 import ContactForm from '@/components/ContactForm'
 import ScrollInit from '@/components/ScrollInit'
+import HeroParticles from '@/components/HeroParticles'
 
 export const metadata: Metadata = {
   title: 'Contato | VERBO',
@@ -15,18 +15,38 @@ export default function ContatoPage() {
       <ScrollInit />
 
       {/* Hero */}
-      <section id="hero">
-        <OrbitalCanvas />
-        <div className="hero-content">
-          <div className="hero-eyebrow sr">
-            <span />
-            Fale Conosco
-            <span />
-          </div>
-          <h1 className="sr d1">
-            Vamos <em>conectar</em> sua operação
+      <section style={{
+        background: 'linear-gradient(160deg, #FFFFFF 0%, #F0F6FF 50%, #E8F0FF 100%)',
+        minHeight: '52vh',
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: '120px',
+        paddingLeft: '5%',
+        paddingRight: '5%',
+        paddingBottom: '80px',
+        position: 'relative',
+        overflow: 'hidden',
+      }}>
+        {/* Decorative grid */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          backgroundImage: 'linear-gradient(rgba(26,65,140,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(26,65,140,.05) 1px, transparent 1px)',
+          backgroundSize: '48px 48px',
+        }} />
+        <HeroParticles />
+        <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', width: '100%', textAlign: 'center' }}>
+          <span className="eyebrow">Fale Conosco</span>
+          <h1 style={{
+            fontSize: 'clamp(2.6rem, 6vw, 4.8rem)',
+            fontWeight: 800,
+            lineHeight: 1.05,
+            letterSpacing: '-.03em',
+            color: 'var(--text)',
+            marginBottom: '1rem',
+          }}>
+            Vamos <span className="g-text">conectar</span> sua operação
           </h1>
-          <p className="sub sr d2">
+          <p style={{ fontSize: '1.1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.75, margin: '0 auto' }}>
             Nossa equipe está pronta para criar a solução de conectividade ideal para seu negócio.
           </p>
         </div>
@@ -55,47 +75,26 @@ export default function ContatoPage() {
             </div>
 
             {[
-              { Icon: Mail,   label: 'E-mail',   value: 'contato@verbo.com.br', href: 'mailto:contato@verbo.com.br' },
-              { Icon: Phone,  label: 'Telefone', value: '+55 (11) 0000-0000', href: 'tel:+551100000000' },
-              { Icon: MapPin, label: 'Endereço', value: 'São Paulo, SP — Brasil', href: null },
+              { Icon: Mail,   label: 'E-mail',   value: 'contato@verbo.com.br',                          href: 'mailto:contato@verbo.com.br' },
+              { Icon: Phone,  label: 'Telefone', value: '0800 746 4613',                                  href: 'tel:08007464613' },
+              { Icon: MapPin, label: 'Endereço', value: 'Avenida Getúlio Vargas, 447 – 1º ANDAR\nBelo Horizonte, MG', href: null },
             ].map((item) => (
               <div key={item.label} style={{
                 display: 'flex', gap: '1rem', alignItems: 'flex-start',
                 padding: '1.25rem 1.5rem', background: 'rgba(0,0,0,.02)',
                 border: '1px solid var(--border)', borderRadius: 16,
               }}>
-                <item.Icon size={20} strokeWidth={1.5} style={{ color: 'var(--cyan)', flexShrink: 0 }} />
+                <item.Icon size={20} strokeWidth={1.5} style={{ color: 'var(--cyan)', flexShrink: 0, marginTop: '2px' }} />
                 <div>
                   <div style={{ fontSize: '.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: 'var(--muted)', marginBottom: '.25rem' }}>{item.label}</div>
                   {item.href ? (
                     <a href={item.href} style={{ fontSize: '.95rem', fontWeight: 600, color: 'var(--text)' }}>{item.value}</a>
                   ) : (
-                    <span style={{ fontSize: '.95rem', fontWeight: 600, color: 'var(--text)' }}>{item.value}</span>
+                    <span style={{ fontSize: '.95rem', fontWeight: 600, color: 'var(--text)', whiteSpace: 'pre-line' }}>{item.value}</span>
                   )}
                 </div>
               </div>
             ))}
-
-            {/* WhatsApp CTA */}
-            <a
-              href="https://wa.me/5511000000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'flex', alignItems: 'center', gap: '1rem',
-                padding: '1.25rem 1.75rem',
-                background: 'rgba(37,211,102,.08)',
-                border: '1px solid rgba(37,211,102,.25)',
-                borderRadius: 16, cursor: 'pointer',
-                transition: 'all .25s',
-              }}
-            >
-              <span style={{ fontSize: '1.8rem' }}>💬</span>
-              <div>
-                <div style={{ fontSize: '.72rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '.08em', color: '#25D366', marginBottom: '.2rem' }}>WhatsApp</div>
-                <div style={{ fontSize: '.9rem', color: 'var(--muted)' }}>Resposta em até 1 hora</div>
-              </div>
-            </a>
           </div>
         </div>
       </section>

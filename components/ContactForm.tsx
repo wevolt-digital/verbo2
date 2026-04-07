@@ -5,7 +5,7 @@ import { useState, FormEvent } from 'react'
 export default function ContactForm() {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
-  const [form, setForm] = useState({ nome: '', empresa: '', email: '', telefone: '', cidade: '', mensagem: '' })
+  const [form, setForm] = useState({ nome: '', empresa: '', email: '', telefone: '', mensagem: '' })
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -53,14 +53,10 @@ export default function ContactForm() {
         </div>
       </div>
       <div className="form-group">
-        <label htmlFor="cidade">Cidade / Estado</label>
-        <input id="cidade" name="cidade" type="text" placeholder="Ex: São Paulo, SP" value={form.cidade} onChange={handleChange} />
-      </div>
-      <div className="form-group">
         <label htmlFor="mensagem">Mensagem</label>
         <textarea id="mensagem" name="mensagem" placeholder="Descreva sua necessidade..." value={form.mensagem} onChange={handleChange} required />
       </div>
-      <button type="submit" className="btn-p" disabled={loading} style={{ opacity: loading ? 0.7 : 1 }}>
+      <button type="submit" className="btn-p" disabled={loading} style={{ opacity: loading ? 0.7 : 1, width: '100%', justifyContent: 'center' }}>
         {loading ? 'Enviando...' : 'Enviar mensagem'}
         {!loading && <span className="shine" />}
         {!loading && (
