@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Target, Telescope, Sparkles } from 'lucide-react'
+import { Target, Telescope, Sparkles, Server, Shield, Globe } from 'lucide-react'
 import CTASection from '@/components/CTASection'
 import ScrollInit from '@/components/ScrollInit'
 import HeroParticles from '@/components/HeroParticles'
@@ -73,13 +73,13 @@ export default function SobrePage() {
           <div className="sr-left">
             <div className="eyebrow">Nossa Essência</div>
             <h2 style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, marginBottom: '1.2rem', color: 'var(--text)' }}>
-              Tecnologia orbital <span className="g-text">a serviço das pessoas</span>
+              Simples, acessível <span className="g-text">e sem fronteiras</span>
             </h2>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              A VERBO nasceu da convicção de que a internet de alta qualidade não é privilégio de quem mora próximo a centros urbanos. Nossa missão é tornar a conectividade acessível em todo o território nacional.
+              Acreditamos que soluções móveis via satélite devem ser simples e acessíveis. Por isso, desenvolvemos nossa própria rede terrestre exclusiva para conectar você a soluções incomparáveis, com as redes móveis por satélite mais confiáveis do mundo.
             </p>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8 }}>
-              Com cobertura que alcança desde grandes centros até os rincões mais remotos do Brasil, a VERBO representa o futuro da conectividade: confiável, rápida e sem fronteiras geográficas.
+              Isso nos permite oferecer a cada usuário soluções mais rápidas, melhores e mais flexíveis. Em outras palavras, conexões que não apenas funcionam — elas se destacam.
             </p>
           </div>
           <div className="sr-right" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -106,6 +106,48 @@ export default function SobrePage() {
                 <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="20s" repeatCount="indefinite"/>
               </circle>
             </svg>
+          </div>
+        </div>
+      </section>
+
+      {/* Alcance */}
+      <section style={{ padding: '90px 5%', background: 'var(--bg)' }}>
+        <div style={{ maxWidth: 860, margin: '0 auto', textAlign: 'center' }}>
+          <div className="eyebrow sr">Alcance</div>
+          <h2 className="sr d1" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--text)', marginBottom: '1.5rem' }}>
+            Conectividade onde <span className="g-text">você precisar</span>
+          </h2>
+          <p className="sr d2" style={{ fontSize: '1.15rem', color: 'var(--muted)', lineHeight: 1.9 }}>
+            Mesmo com a complexidade por trás da tecnologia, nossas soluções via satélite oferecem um serviço simples, confiável e premiado. Seja em áreas remotas, em alto-mar ou onde a cobertura tradicional não alcança, garantimos conectividade contínua para empresas, embarcações e operações exigentes.
+          </p>
+        </div>
+      </section>
+
+      {/* Infraestrutura */}
+      <section style={{ padding: '100px 5%', background: 'var(--surface)' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <div className="eyebrow sr">Infraestrutura</div>
+            <h2 className="sr d1" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--text)' }}>
+              Rede de <span className="g-text">nível operadora</span>
+            </h2>
+          </div>
+          <div className="mission-grid">
+            <div className="mission-card sr d1">
+              <Server size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
+              <h3>Totalmente redundante</h3>
+              <p>Infraestrutura de nível operadora interligada diretamente às maiores operadoras globais de satélite, sem ponto único de falha.</p>
+            </div>
+            <div className="mission-card sr d2">
+              <Shield size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
+              <h3>Alta disponibilidade</h3>
+              <p>Rede moderna baseada em IP com segurança de ponta, gerenciamento eficiente de chamadas e alertas inteligentes em tempo real.</p>
+            </div>
+            <div className="mission-card sr d3">
+              <Globe size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
+              <h3>Voz, dados e mais</h3>
+              <p>Oferecemos voz, dados e serviços de valor agregado com alta performance para as operações mais exigentes do planeta.</p>
+            </div>
           </div>
         </div>
       </section>
