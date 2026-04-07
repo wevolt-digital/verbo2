@@ -84,7 +84,7 @@ export default function CoverageMap() {
               onMouseEnter={() => setHoveredCity(city.name)}
               onMouseLeave={() => setHoveredCity(null)}
             >
-              <circle r={4} fill="#0bb5e9" stroke="#fff" strokeWidth={1.5} style={{ cursor: 'pointer' }} />
+              <circle r={4} fill="#0bb5e9" stroke="none" style={{ cursor: 'pointer' }} />
               {hoveredCity === city.name && (
                 <text
                   textAnchor="middle"
@@ -93,7 +93,7 @@ export default function CoverageMap() {
                     fontFamily: 'inherit',
                     fontSize: '10px',
                     fontWeight: 600,
-                    fill: PRIMARY,
+                    fill: '#fff',
                     pointerEvents: 'none',
                   }}
                 >
