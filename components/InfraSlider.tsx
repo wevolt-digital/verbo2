@@ -39,7 +39,7 @@ export default function InfraSlider() {
       onMouseLeave={() => setPaused(false)}
       style={{ position: 'relative' }}
     >
-      <div className="mission-card infra-slide">
+      <div className="mission-card infra-slide" style={{ minHeight: '160px' }}>
         <Icon size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
         <h3>{title}</h3>
         <p>{text}</p>
