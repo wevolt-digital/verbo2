@@ -251,19 +251,19 @@ nav a:hover { color: var(--text); }
 
 /* ─── MARQUEE ─── */
 #marquee-section {
-  padding: 64px 0 0; overflow: hidden;
+  padding: 40px 0 0; overflow: hidden;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background: var(--surface);
 }
 .marquee-title {
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--muted);
-  padding: 0 5% 40px;
+  color: #1a418c;
+  padding: 0 5% 28px;
 }
 .marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
 .marquee-track:hover { animation-play-state: paused; }
