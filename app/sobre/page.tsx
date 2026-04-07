@@ -116,14 +116,9 @@ export default function SobrePage() {
 
       {/* Infraestrutura */}
       <section style={{ padding: '100px 5%', background: 'var(--surface)' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <div className="eyebrow sr">Infraestrutura</div>
-            <h2 className="sr d1" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--text)' }}>
-              Rede de <span className="g-text">nível operadora</span>
-            </h2>
-          </div>
-          <div className="mission-grid">
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+          {/* Cards — esquerda */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div className="mission-card sr d1">
               <Server size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
               <h3>Totalmente redundante</h3>
@@ -139,6 +134,16 @@ export default function SobrePage() {
               <h3>Voz, dados e mais</h3>
               <p>Oferecemos voz, dados e serviços de valor agregado com alta performance para as operações mais exigentes do planeta.</p>
             </div>
+          </div>
+          {/* Conteúdo — direita */}
+          <div className="sr-right">
+            <div className="eyebrow">Infraestrutura</div>
+            <h2 style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--text)', marginBottom: '1.2rem' }}>
+              Rede de <span className="g-text">nível operadora</span>
+            </h2>
+            <p style={{ color: 'var(--muted)', lineHeight: 1.8 }}>
+              A infraestrutura da VERBO é totalmente redundante e interligada diretamente a operadoras globais de satélite. Com uma rede moderna baseada em IP, oferecemos voz, dados e serviços de valor agregado com alta disponibilidade, segurança e alertas inteligentes.
+            </p>
           </div>
         </div>
       </section>
