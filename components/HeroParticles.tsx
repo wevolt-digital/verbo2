@@ -15,7 +15,7 @@ export default function HeroParticles() {
 
   useEffect(() => {
     setParticles(
-      Array.from({ length: 20 }, (_, i) => ({
+      Array.from({ length: 28 }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
         delay: Math.random() * 7,

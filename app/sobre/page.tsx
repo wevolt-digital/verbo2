@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
-import { Target, Telescope, Sparkles, Server, Shield, Globe } from 'lucide-react'
+import { Server, Shield, Globe } from 'lucide-react'
 import CTASection from '@/components/CTASection'
 import ScrollInit from '@/components/ScrollInit'
 import HeroParticles from '@/components/HeroParticles'
@@ -53,17 +52,13 @@ export default function SobrePage() {
             marginBottom: '1rem',
           }}>
             O movimento que{' '}
-            <span className="g-text">conecta o Brasil</span>
+            <span className="hero-block-line">
+              <span className="g-text">conecta o Brasil</span>
+            </span>
           </h1>
-          <p style={{ fontSize: '1.1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.75, marginBottom: '2rem' }}>
+          <p style={{ fontSize: '1.1rem', color: 'var(--muted)', maxWidth: '480px', lineHeight: 1.75 }}>
             Somos uma empresa de tecnologia satelital dedicada a eliminar o isolamento digital no Brasil e no mundo.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/contato" className="btn-p">
-              Fale Conosco <span className="shine" />
-            </Link>
-            <Link href="/" className="btn-s">Nossas Soluções</Link>
-          </div>
         </div>
       </section>
 
@@ -152,45 +147,27 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Missão / Visão / Valores */}
+      {/* Nossa Equipe */}
       <section style={{ padding: '100px 5%', background: 'var(--bg)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <div className="eyebrow sr">Propósito</div>
+            <div className="eyebrow sr">Nossa Equipe</div>
             <h2 className="sr d1" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--text)' }}>
-              Nossa <span className="g-text">razão de existir</span>
+              As pessoas por trás <span className="g-text">da VERBO</span>
             </h2>
           </div>
-          <div className="mission-grid">
-            <div className="mission-card sr d1">
-              <Target size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
-              <h3>Missão</h3>
-              <p>Democratizar o acesso à internet de alta performance no Brasil e no mundo, usando tecnologia de satélites LEO para eliminar barreiras geográficas.</p>
-            </div>
-            <div className="mission-card sr d2">
-              <Telescope size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
-              <h3>Visão</h3>
-              <p>Ser a principal provedora de conectividade via satélite da América Latina, referência em tecnologia, confiabilidade e impacto social positivo até 2030.</p>
-            </div>
-            <div className="mission-card sr d3">
-              <Sparkles size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
-              <h3>Valores</h3>
-              <p>Inovação sem limites, compromisso com o cliente, responsabilidade social e transparência total em todas as nossas operações e relacionamentos.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Personality chips */}
-      <section style={{ padding: '80px 5%', background: 'var(--surface)', textAlign: 'center' }}>
-        <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <div className="eyebrow sr">Identidade</div>
-          <h2 className="sr d1" style={{ fontSize: 'clamp(1.8rem,3vw,2.5rem)', fontWeight: 700, marginBottom: '2.5rem', color: 'var(--text)' }}>
-            O que nos <span className="g-text">define</span>
-          </h2>
-          <div className="personality-chips sr d2">
-            {['Inovadora', 'Confiável', 'Ousada', 'Humana', 'Global', 'Sustentável', 'Tecnológica', 'Acessível', 'Resiliente', 'Colaborativa'].map((chip) => (
-              <span key={chip} className="p-chip">{chip}</span>
+          <div className="team-grid">
+            {[
+              { name: 'Helon Junior',    role: 'Chief Business Officer' },
+              { name: 'Lorrane Souza',   role: 'Diretora Financeiro' },
+              { name: 'Felicia Borges',  role: 'Políticas ESG' },
+              { name: 'Osvaldo Katsumi', role: 'Diretor Técnico' },
+            ].map((member, i) => (
+              <div key={member.name} className={`team-card sr d${i + 1}`}>
+                <div className="team-photo" />
+                <h3>{member.name}</h3>
+                <p>{member.role}</p>
+              </div>
             ))}
           </div>
         </div>
