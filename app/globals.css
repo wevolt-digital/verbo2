@@ -538,6 +538,15 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 .policy-section p, .policy-section li { font-size: .9rem; color: var(--muted); line-height: 1.8; margin-bottom: .75rem; }
 .policy-section ul { padding-left: 1.5rem; }
 
+/* ─── INFRA SLIDER ─── */
+@keyframes infra-in {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.infra-slide {
+  animation: infra-in .45s ease forwards;
+}
+
 /* ─── HERO PARTICLES (sinais ascendentes) ─── */
 @keyframes particle-rise {
   0%   { transform: translateY(0) scale(1);    opacity: 0; }
