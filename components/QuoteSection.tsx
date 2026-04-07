@@ -15,10 +15,11 @@ export default function QuoteSection() {
     if (!section) return
 
     function update() {
-      const rect     = section!.getBoundingClientRect()
-      const vh       = window.innerHeight
-      // 0 quando o topo da section chega no fundo da tela, 1 quando sai pelo topo
-      const progress = Math.max(0, Math.min(1, (vh - rect.top) / (vh + rect.height)))
+      const rect    = section!.getBoundingClientRect()
+      const vh      = window.innerHeight
+      const centerY = rect.top + rect.height / 2
+      // inicia quando o centro da section entra pelo fundo; conclui quando chega ao meio da tela
+      const progress = Math.max(0, Math.min(1, (vh - centerY) / (vh * 0.5)))
       const total    = wordsRef.current.length
       wordsRef.current.forEach((span, i) => {
         // cada palavra ilumina proporcionalmente ao scroll
