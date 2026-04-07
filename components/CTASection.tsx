@@ -31,7 +31,7 @@ export default function CTASection() {
               <input  type="tel"   name="telefone" placeholder="Telefone" />
             </div>
             <textarea name="mensagem" placeholder="Mensagem" rows={4} required />
-            <button type="submit" className="btn-white">Enviar mensagem</button>
+            <button type="submit" className="btn-white">Fale com a VERBO</button>
           </form>
         )}
       </div>
