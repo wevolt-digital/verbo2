@@ -31,18 +31,32 @@ export default function InfraSlider() {
     return () => clearInterval(id)
   }, [paused])
 
-  const { Icon, title, text } = cards[active]
-
   return (
     <div
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
-      style={{ position: 'relative' }}
     >
-      <div className="mission-card infra-slide" style={{ minHeight: '160px' }}>
-        <Icon size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
-        <h3>{title}</h3>
-        <p>{text}</p>
+      {/* Grid empilhado — altura = card mais alto */}
+      <div style={{ display: 'grid' }}>
+        {cards.map((card, i) => {
+          const Icon = card.Icon
+          return (
+            <div
+              key={i}
+              className={active === i ? 'mission-card infra-slide' : 'mission-card'}
+              style={{
+                gridArea: '1 / 1',
+                visibility: active === i ? 'visible' : 'hidden',
+                opacity: active === i ? 1 : 0,
+                pointerEvents: active === i ? 'auto' : 'none',
+              }}
+            >
+              <Icon size={28} strokeWidth={1.5} style={{ color: 'var(--primary)', marginBottom: '1rem' }} />
+              <h3>{card.title}</h3>
+              <p>{card.text}</p>
+            </div>
+          )
+        })}
       </div>
 
       {/* Dots */}
