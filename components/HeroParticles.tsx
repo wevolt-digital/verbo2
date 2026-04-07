@@ -20,7 +20,7 @@ export default function HeroParticles() {
         left: Math.random() * 100,
         delay: Math.random() * 7,
         duration: 5 + Math.random() * 6,
-        size: 2 + Math.random() * 2.5,
+        size: 3 + Math.random() * 3,
       }))
     )
   }, [])
