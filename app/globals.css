@@ -351,18 +351,19 @@ nav a:hover { color: var(--text); }
 .tile-desc { font-size: .83rem; color: var(--muted); line-height: 1.65; }
 
 /* tile com vídeo */
-.sector-tile--video { padding: 0; cursor: pointer; min-height: 320px; }
+.sector-tile--video { cursor: pointer; }
 .tile-video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   z-index: 0;
 }
-.sector-tile--video .tile-content {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 2.8rem 2.2rem;
+.sector-tile--video::after {
+  content: ''; position: absolute; inset: 0; z-index: 0;
   background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.2) 55%, transparent 100%);
+}
+.sector-tile--video .tile-content {
+  position: relative; z-index: 1;
 }
 .sector-tile--video .tile-icon { color: #fff; margin-bottom: 1rem; }
 .sector-tile--video .tile-title { color: #fff; }
