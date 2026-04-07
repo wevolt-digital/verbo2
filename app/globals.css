@@ -411,6 +411,10 @@ nav a:hover { color: var(--text); }
   background-image: linear-gradient(rgba(26,65,140,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(26,65,140,.07) 1px, transparent 1px);
   background-size: 50px 50px;
 }
+.map-crop {
+  margin-top: -7%; margin-bottom: -10%;
+  position: relative; z-index: 1;
+}
 .coverage-stats { display: flex; justify-content: center; gap: 4rem; margin-top: 3.5rem; flex-wrap: wrap; }
 .cov-stat { text-align: center; }
 .cov-num { font-size: 2rem; font-weight: 800; color: var(--primary); letter-spacing: -.03em; }

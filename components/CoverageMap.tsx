@@ -46,6 +46,7 @@ export default function CoverageMap() {
 
       <div className="coverage-map-wrap sr-scale d2">
         <div className="map-grid-lines" />
+        <div className="map-crop">
         <ComposableMap
           projection="geoNaturalEarth1"
           style={{ width: '100%', height: 'auto', position: 'relative', zIndex: 1 }}
@@ -102,6 +103,7 @@ export default function CoverageMap() {
             </Marker>
           ))}
         </ComposableMap>
+        </div>
       </div>
 
       <div className="coverage-stats sr d3">
