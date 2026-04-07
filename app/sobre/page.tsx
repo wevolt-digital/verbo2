@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Target, Telescope, Sparkles } from 'lucide-react'
 import CTASection from '@/components/CTASection'
 import ScrollInit from '@/components/ScrollInit'
+import HeroParticles from '@/components/HeroParticles'
 
 export const metadata: Metadata = {
   title: 'Sobre | VERBO',
@@ -40,22 +41,7 @@ export default function SobrePage() {
           background: 'radial-gradient(circle, rgba(11,181,233,.08) 0%, transparent 65%)',
           pointerEvents: 'none',
         }} />
-        {/* Waveform signal */}
-        <div className="hero-wave-wrap">
-          <svg className="hero-wave-svg" viewBox="0 0 2000 60" width="2000" height="60" fill="none">
-            <path d="M 0,30 C 36,6 64,6 100,30 C 136,54 164,54 200,30 C 236,6 264,6 300,30 C 336,54 364,54 400,30 C 436,6 464,6 500,30 C 536,54 564,54 600,30 C 636,6 664,6 700,30 C 736,54 764,54 800,30 C 836,6 864,6 900,30 C 936,54 964,54 1000,30 C 1036,6 1064,6 1100,30 C 1136,54 1164,54 1200,30 C 1236,6 1264,6 1300,30 C 1336,54 1364,54 1400,30 C 1436,6 1464,6 1500,30 C 1536,54 1564,54 1600,30 C 1636,6 1664,6 1700,30 C 1736,54 1764,54 1800,30 C 1836,6 1864,6 1900,30 C 1936,54 1964,54 2000,30" stroke="rgba(11,181,233,1)" strokeWidth="1.5"/>
-          </svg>
-          <svg className="hero-wave-svg hero-wave-svg--2" viewBox="0 0 2000 60" width="2000" height="60" fill="none">
-            <path d="M 0,30 C 36,6 64,6 100,30 C 136,54 164,54 200,30 C 236,6 264,6 300,30 C 336,54 364,54 400,30 C 436,6 464,6 500,30 C 536,54 564,54 600,30 C 636,6 664,6 700,30 C 736,54 764,54 800,30 C 836,6 864,6 900,30 C 936,54 964,54 1000,30 C 1036,6 1064,6 1100,30 C 1136,54 1164,54 1200,30 C 1236,6 1264,6 1300,30 C 1336,54 1364,54 1400,30 C 1436,6 1464,6 1500,30 C 1536,54 1564,54 1600,30 C 1636,6 1664,6 1700,30 C 1736,54 1764,54 1800,30 C 1836,6 1864,6 1900,30 C 1936,54 1964,54 2000,30" stroke="rgba(26,65,140,1)" strokeWidth="1"/>
-          </svg>
-        </div>
-        {/* Pulse sonar */}
-        <div className="hero-pulse-wrap">
-          <div className="hero-pulse-ring" />
-          <div className="hero-pulse-ring" />
-          <div className="hero-pulse-ring" />
-          <div className="hero-pulse-dot" />
-        </div>
+        <HeroParticles />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: '1100px', margin: '0 auto', width: '100%' }}>
           <span className="eyebrow">Sobre a VERBO</span>
           <h1 style={{
