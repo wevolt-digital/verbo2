@@ -32,7 +32,7 @@ export default function SobrePage() {
         {/* Decorative grid */}
         <div style={{
           position: 'absolute', inset: 0,
-          backgroundImage: 'linear-gradient(rgba(26,65,140,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(26,65,140,.12) 1px, transparent 1px)',
+          backgroundImage: 'linear-gradient(rgba(26,65,140,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(26,65,140,.03) 1px, transparent 1px)',
           backgroundSize: '48px 48px',
         }} />
         <HeroParticles />
