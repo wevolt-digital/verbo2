@@ -369,6 +369,22 @@ nav a:hover { color: var(--text); }
 .sector-tile--video .tile-title { color: #fff; }
 .sector-tile--video .tile-desc { color: rgba(255,255,255,.75); }
 
+/* ─── ESSÊNCIA VIDEO ─── */
+.essencia-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 8px 40px rgba(26,65,140,.08);
+}
+.essencia-video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
 /* ─── QUOTE ─── */
 #quote {
   min-height: 80vh; display: flex; align-items: center; justify-content: center;

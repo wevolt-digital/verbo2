@@ -4,6 +4,7 @@ import InfraSlider from '@/components/InfraSlider'
 import CTASection from '@/components/CTASection'
 import ScrollInit from '@/components/ScrollInit'
 import HeroParticles from '@/components/HeroParticles'
+import EssenciaVideo from '@/components/EssenciaVideo'
 
 export const metadata: Metadata = {
   title: 'Sobre | VERBO',
@@ -74,16 +75,7 @@ export default function SobrePage() {
               Isso nos permite oferecer a cada usuário soluções mais rápidas, melhores e mais flexíveis. Em outras palavras, conexões que não apenas funcionam, elas se destacam.
             </p>
           </div>
-          <div className="sr-right" style={{ width: '100%' }}>
-            <div style={{
-              width: '100%',
-              aspectRatio: '4 / 3',
-              borderRadius: '20px',
-              background: 'linear-gradient(135deg, #E8F0FF 0%, #C8D8F8 100%)',
-              border: '1px solid var(--border)',
-              boxShadow: '0 8px 40px rgba(26,65,140,.08)',
-            }} />
-          </div>
+          <EssenciaVideo />
         </div>
       </section>
 
