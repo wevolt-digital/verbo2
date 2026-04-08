@@ -64,7 +64,7 @@ export default function SobrePage() {
             <h2 style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, marginBottom: '1.2rem', color: 'var(--text)' }}>
               Simples, acessível{' '}
               <span className="hero-block-line">
-                e <span className="g-text">sem fronteiras</span>
+                e sem fronteiras
               </span>
             </h2>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
@@ -92,7 +92,7 @@ export default function SobrePage() {
         <div style={{ maxWidth: 860, margin: '0 auto', textAlign: 'center' }}>
           <div className="eyebrow sr">Alcance</div>
           <h2 className="sr d1" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--text)', marginBottom: '1.5rem' }}>
-            Conectividade onde <span className="g-text">você precisar</span>
+            Conectividade onde você precisar
           </h2>
           <p className="sr d2" style={{ fontSize: '1.15rem', color: 'var(--muted)', lineHeight: 1.9 }}>
             Mesmo com a complexidade por trás da tecnologia, nossas soluções via satélite oferecem um serviço simples, confiável e premiado. Seja em áreas remotas, em alto-mar ou onde a cobertura tradicional não alcança, garantimos conectividade contínua para empresas, embarcações e operações exigentes.
@@ -109,7 +109,7 @@ export default function SobrePage() {
           <div className="sr-right">
             <div className="eyebrow">Infraestrutura</div>
             <h2 style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--text)', marginBottom: '1.2rem' }}>
-              Rede de <span className="g-text">nível operadora</span>
+              Rede de nível operadora
             </h2>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8 }}>
               A infraestrutura da VERBO é totalmente redundante e interligada diretamente a operadoras globais de satélite. Com uma rede moderna baseada em IP, oferecemos voz, dados e serviços de valor agregado com alta disponibilidade, segurança e alertas inteligentes.
@@ -124,7 +124,7 @@ export default function SobrePage() {
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div className="eyebrow sr">Nossa Equipe</div>
             <h2 className="sr d1" style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, color: 'var(--text)' }}>
-              As pessoas por trás <span className="g-text">da VERBO</span>
+              As pessoas por trás da VERBO
             </h2>
           </div>
           <div className="team-grid">
