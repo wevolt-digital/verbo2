@@ -596,6 +596,8 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 /* ─── HERO LINE BREAK (desktop only) ─── */
 .hero-block-line { display: block; }
 @media (max-width: 768px) { .hero-block-line { display: inline; } }
+.desktop-br { display: none; }
+@media (min-width: 769px) { .desktop-br { display: block; } }
 
 /* ─── TEAM GRID ─── */
 .team-grid {
