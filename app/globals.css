@@ -594,8 +594,6 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   aspect-ratio: 1 / 1;
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, #E8F0FF 0%, #C8D8F8 100%);
-  border: 1px solid var(--border);
   margin-bottom: 1.25rem;
 }
 .team-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: .3rem; }
