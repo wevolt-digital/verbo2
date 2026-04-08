@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import InfraSlider from '@/components/InfraSlider'
 import CTASection from '@/components/CTASection'
 import ScrollInit from '@/components/ScrollInit'
@@ -128,13 +129,20 @@ export default function SobrePage() {
           </div>
           <div className="team-grid">
             {[
-              { name: 'Helon Junior',    role: 'Chief Business Officer' },
-              { name: 'Lorrane Souza',   role: 'Diretora Financeiro' },
-              { name: 'Felicia Borges',  role: 'Políticas ESG' },
-              { name: 'Osvaldo Katsumi', role: 'Diretor Técnico' },
+              { name: 'Helon Junior',    role: 'Chief Business Officer', photo: '/staff-hellon.webp' },
+              { name: 'Lorrane Souza',   role: 'Diretora Financeiro',    photo: '/staff-lorrane.webp' },
+              { name: 'Felicia Borges',  role: 'Políticas ESG',          photo: '/staff-felicia.webp' },
+              { name: 'Osvaldo Katsumi', role: 'Diretor Técnico',        photo: '/staff-osvaldo.webp' },
             ].map((member, i) => (
               <div key={member.name} className={`team-card sr d${i + 1}`}>
-                <div className="team-photo" />
+                <div className="team-photo">
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    style={{ objectFit: 'cover', borderRadius: 16 }}
+                  />
+                </div>
                 <h3>{member.name}</h3>
                 <p>{member.role}</p>
               </div>
