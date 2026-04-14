@@ -102,7 +102,7 @@ export default function Home() {
       <section id="sectors">
         <div className="sectors-header sr">
           <span className="eyebrow">Setores de atuação</span>
-          <h2>Cada operação tem um desafio.<br className="desktop-br" /> Nós conectamos todos.</h2>
+          <h2>Cada operação tem um desafio.<br className="desktop-br" /> Nós conectamos soluções.</h2>
           <p>Atuamos nos ambientes mais desafiadores, levando conectividade de alta performance aos setores mais críticos.</p>
         </div>
         <SectorsGrid />
