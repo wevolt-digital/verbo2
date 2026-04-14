@@ -17,9 +17,9 @@ export default function Header() {
     <header className={scrolled ? 'scrolled' : ''}>
       <Link href="/" className="logo">
         {scrolled ? (
-          <Image src="/verbo-simbolo.svg" alt="VERBO" width={32} height={32} priority />
+          <Image src="/verbo-simbolo.svg" alt="VERBO" width={800} height={570} priority />
         ) : (
-          <Image src="/verbo-logo.svg" alt="VERBO" width={100} height={32} priority />
+          <Image src="/verbo-logo.svg" alt="VERBO" width={800} height={570} priority />
         )}
       </Link>
       <nav>
