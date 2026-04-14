@@ -31,7 +31,7 @@ export default function Header() {
             width={800}
             height={570}
             priority
-            className={`logo-simbolo${scrolled ? '' : ' logo-hidden'}`}
+            className={`logo-simbolo logo-simbolo-img${scrolled ? '' : ' logo-hidden'}`}
           />
         </span>
       </Link>

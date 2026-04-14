@@ -112,6 +112,7 @@ header.scrolled {
 .logo-img-wrap img { transition: opacity .4s ease; }
 .logo-hidden { opacity: 0; pointer-events: none; }
 .logo-simbolo { position: absolute; left: 0; }
+.logo-simbolo-img { height: 44px !important; }
 nav { display: flex; gap: 2rem; }
 nav a { font-size: .82rem; font-weight: 500; color: rgba(29,29,31,.55); transition: color .2s; cursor: pointer; }
 nav a:hover { color: var(--text); }
