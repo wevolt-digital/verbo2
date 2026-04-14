@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="footer-grid">
         <div className="footer-brand">
           <div className="logo-f">
-            <Image src="/verbo-logo-full.svg" alt="VERBO" width={800} height={570} style={{ height: '48px', width: 'auto' }} />
+            <Image src="/verbo-logo-full.svg" alt="VERBO" width={800} height={570} style={{ height: '64px', width: 'auto' }} />
           </div>
         </div>
         <div className="footer-col">
