@@ -16,11 +16,24 @@ export default function Header() {
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <Link href="/" className="logo">
-        {scrolled ? (
-          <Image src="/verbo-simbolo.svg" alt="VERBO" width={800} height={570} priority />
-        ) : (
-          <Image src="/verbo-logo.svg" alt="VERBO" width={800} height={570} priority />
-        )}
+        <span className="logo-img-wrap">
+          <Image
+            src="/verbo-logo.svg"
+            alt="VERBO"
+            width={800}
+            height={570}
+            priority
+            className={`logo-full${scrolled ? ' logo-hidden' : ''}`}
+          />
+          <Image
+            src="/verbo-simbolo.svg"
+            alt="VERBO"
+            width={800}
+            height={570}
+            priority
+            className={`logo-simbolo${scrolled ? '' : ' logo-hidden'}`}
+          />
+        </span>
       </Link>
       <nav>
         <Link href="/">Início</Link>

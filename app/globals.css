@@ -107,7 +107,11 @@ header.scrolled {
   border-bottom-color: var(--border);
 }
 .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -.02em; background: linear-gradient(135deg, var(--primary), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; cursor: pointer; }
-.logo img { height: 46px; width: auto; display: block; }
+.logo img { height: 54px; width: auto; display: block; }
+.logo-img-wrap { position: relative; display: flex; align-items: center; }
+.logo-img-wrap img { transition: opacity .4s ease; }
+.logo-hidden { opacity: 0; pointer-events: none; }
+.logo-simbolo { position: absolute; left: 0; }
 nav { display: flex; gap: 2rem; }
 nav a { font-size: .82rem; font-weight: 500; color: rgba(29,29,31,.55); transition: color .2s; cursor: pointer; }
 nav a:hover { color: var(--text); }
