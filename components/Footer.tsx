@@ -9,7 +9,6 @@ export default function Footer() {
           <div className="logo-f">
             <Image src="/verbo-logo-white.svg" alt="VERBO" width={110} height={34} />
           </div>
-          <p>Internet via satélite LEO para todo o Brasil. Conectividade onde outros não chegam.</p>
         </div>
         <div className="footer-col">
           <h4>Empresa</h4>
