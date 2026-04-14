@@ -94,7 +94,7 @@ h3 { letter-spacing: -.02em; line-height: 1.2; }
 /* ─── HEADER ─── */
 header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  height: 52px; display: flex; align-items: center; justify-content: space-between;
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
   padding: 0 4%;
   background: rgba(255,255,255,0); backdrop-filter: blur(0px);
   border-bottom: 1px solid transparent;
@@ -107,7 +107,7 @@ header.scrolled {
   border-bottom-color: var(--border);
 }
 .logo { font-size: 1.3rem; font-weight: 800; letter-spacing: -.02em; background: linear-gradient(135deg, var(--primary), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; cursor: pointer; }
-.logo img { height: 36px; width: auto; display: block; }
+.logo img { height: 28px; width: auto; display: block; }
 nav { display: flex; gap: 2rem; }
 nav a { font-size: .82rem; font-weight: 500; color: rgba(29,29,31,.55); transition: color .2s; cursor: pointer; }
 nav a:hover { color: var(--text); }
