@@ -1,13 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+
 export default function Footer() {
   return (
     <footer>
       <div className="footer-grid">
         <div className="footer-brand">
           <div className="logo-f">
-            <Image src="/verbo-logo-white.svg" alt="VERBO" width={110} height={34} />
+            <Image src="/verbo-logo-full.svg" alt="VERBO" width={800} height={570} style={{ height: '48px', width: 'auto' }} />
           </div>
         </div>
         <div className="footer-col">
