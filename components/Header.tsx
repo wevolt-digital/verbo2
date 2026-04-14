@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -15,7 +16,11 @@ export default function Header() {
   return (
     <header className={scrolled ? 'scrolled' : ''}>
       <Link href="/" className="logo">
-        VERBO
+        {scrolled ? (
+          <Image src="/verbo-simbolo.svg" alt="VERBO" width={32} height={32} priority />
+        ) : (
+          <Image src="/verbo-logo.svg" alt="VERBO" width={100} height={32} priority />
+        )}
       </Link>
       <nav>
         <Link href="/">Início</Link>

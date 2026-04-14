@@ -1,19 +1,19 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function Footer() {
   return (
     <footer>
       <div className="footer-grid">
         <div className="footer-brand">
-          <div className="logo-f">VERBO</div>
+          <div className="logo-f">
+            <Image src="/verbo-logo-white.svg" alt="VERBO" width={110} height={34} />
+          </div>
           <p>Internet via satélite LEO para todo o Brasil. Conectividade onde outros não chegam.</p>
         </div>
         <div className="footer-col">
           <h4>Empresa</h4>
           <Link href="/sobre">Sobre a VERBO</Link>
-          <a>Missão e valores</a>
-          <a>Parceiros</a>
-          <a>Imprensa</a>
         </div>
         <div className="footer-col">
           <h4>Soluções</h4>
@@ -25,18 +25,14 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Suporte</h4>
           <a href="mailto:contato@verbo.com.br">contato@verbo.com.br</a>
-          <a>Central de ajuda</a>
-          <a>Status da rede</a>
           <Link href="/politicas">Políticas</Link>
           <Link href="/contato">Contato</Link>
         </div>
       </div>
       <div className="footer-bottom">
-        <span>© 2025 VERBO Telecomunicações. Todos os direitos reservados.</span>
+        <span>© 2026 VERBO. Todos os direitos reservados.</span>
         <div style={{ display: 'flex', gap: '1.5rem' }}>
           <Link href="/politicas">Privacidade</Link>
-          <a>Termos de uso</a>
-          <a>Cookies</a>
         </div>
       </div>
     </footer>
