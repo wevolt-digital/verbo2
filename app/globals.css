@@ -127,7 +127,7 @@ nav a:hover { color: var(--text); }
 .mobile-nav { display: flex; flex-direction: column; gap: 0; margin-top: 1rem; }
 .mobile-nav a { font-size: 1.1rem; font-weight: 500; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border); transition: color .2s; }
 .mobile-nav a:hover { color: var(--primary); }
-.mobile-menu-cta { margin-top: 2rem; text-align: center; border-bottom: none !important; }
+.mobile-menu-cta { margin-top: 2rem; align-self: flex-start; border-bottom: none !important; padding: .42rem 1.1rem !important; font-size: .8rem !important; font-weight: 600 !important; color: #fff !important; background: var(--primary) !important; border-radius: 50px !important; }
 .btn-header {
   padding: .42rem 1.1rem; border-radius: 50px;
   font-size: .8rem; font-weight: 600;
