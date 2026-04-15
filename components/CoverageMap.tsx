@@ -5,7 +5,21 @@ import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps
 
 const GEO_URL = '/world-110m.json'
 
-const BRAZIL_ID = '076'
+const SOUTH_AMERICA = new Set([
+  '032', // Argentina
+  '068', // Bolívia
+  '076', // Brasil
+  '152', // Chile
+  '170', // Colômbia
+  '218', // Equador
+  '328', // Guiana
+  '604', // Peru
+  '600', // Paraguai
+  '740', // Suriname
+  '858', // Uruguai
+  '862', // Venezuela
+  '254', // Guiana Francesa
+])
 
 const BRAZIL_CITIES = [
   { name: 'Belo Horizonte', coords: [-43.9345, -19.9167] as [number, number], anchor: 'start'  as const, dx: 6,  dy: 4   },
@@ -40,7 +54,7 @@ export default function CoverageMap() {
           <Geographies geography={GEO_URL}>
             {({ geographies }: { geographies: any[] }) =>
               geographies
-                .filter((geo: any) => String(geo.id).padStart(3, '0') === BRAZIL_ID)
+                .filter((geo: any) => SOUTH_AMERICA.has(String(geo.id).padStart(3, '0')))
                 .map((geo: any) => (
                   <Geography
                     key={geo.rsmKey}
