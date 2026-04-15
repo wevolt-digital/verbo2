@@ -5,28 +5,7 @@ import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps
 
 const GEO_URL = '/world-110m.json'
 
-// ISO numeric codes dos países com presença VERBO
-const ACTIVE_COUNTRIES = new Set([
-  '076', // Brasil
-  '170', // Colômbia
-])
-
-// Países da América do Sul — exibir apenas estes
-const SOUTH_AMERICA = new Set([
-  '032', // Argentina
-  '068', // Bolívia
-  '076', // Brasil
-  '152', // Chile
-  '170', // Colômbia
-  '218', // Equador
-  '328', // Guiana
-  '604', // Peru
-  '600', // Paraguai
-  '740', // Suriname
-  '858', // Uruguai
-  '862', // Venezuela
-  '254', // Guiana Francesa
-])
+const BRAZIL_ID = '076'
 
 const BRAZIL_CITIES = [
   { name: 'Belo Horizonte', coords: [-43.9345, -19.9167] as [number, number], anchor: 'start'  as const, dx: 6,  dy: 4   },
@@ -61,25 +40,21 @@ export default function CoverageMap() {
           <Geographies geography={GEO_URL}>
             {({ geographies }: { geographies: any[] }) =>
               geographies
-                .filter((geo: any) => SOUTH_AMERICA.has(String(geo.id).padStart(3, '0')))
-                .map((geo: any) => {
-                  const id     = String(geo.id).padStart(3, '0')
-                  const active = ACTIVE_COUNTRIES.has(id)
-                  return (
-                    <Geography
-                      key={geo.rsmKey}
-                      geography={geo}
-                      fill={active ? PRIMARY : 'transparent'}
-                      stroke={STROKE}
-                      strokeWidth={0.5}
-                      style={{
-                        default: { outline: 'none' },
-                        hover:   { outline: 'none', fill: active ? PRIMARY_HOVER : 'rgba(26,65,140,.06)' },
-                        pressed: { outline: 'none' },
-                      }}
-                    />
-                  )
-                })
+                .filter((geo: any) => String(geo.id).padStart(3, '0') === BRAZIL_ID)
+                .map((geo: any) => (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    fill="transparent"
+                    stroke={STROKE}
+                    strokeWidth={0.8}
+                    style={{
+                      default: { outline: 'none' },
+                      hover:   { outline: 'none', fill: 'rgba(26,65,140,.06)' },
+                      pressed: { outline: 'none' },
+                    }}
+                  />
+                ))
             }
           </Geographies>
 
