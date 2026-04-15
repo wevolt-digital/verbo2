@@ -49,7 +49,7 @@ export default function CoverageMap() {
         <ComposableMap
           projection="geoMercator"
           style={{ width: '100%', height: 'auto', position: 'relative', zIndex: 1 }}
-          projectionConfig={{ scale: 380, center: [-58, -15] }}
+          projectionConfig={{ scale: 620, center: [-52, -14] }}
         >
           <Geographies geography={GEO_URL}>
             {({ geographies }: { geographies: any[] }) =>
