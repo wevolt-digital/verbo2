@@ -639,7 +639,8 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .team-grid { grid-template-columns: 1fr 1fr; }
   .map-crop { margin-top: 0; margin-bottom: 0; }
   .coverage-map-wrap { border-radius: 20px; }
-  .map-city-label { font-size: 16px !important; }
+  .map-city-label { font-size: 20px !important; }
+  .map-dot { r: 7px; }
 }
 @media (max-width: 480px) {
   .sectors-grid { grid-template-columns: 1fr; }

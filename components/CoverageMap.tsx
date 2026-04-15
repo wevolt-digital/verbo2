@@ -71,8 +71,8 @@ export default function CoverageMap() {
 
           {BRAZIL_CITIES.map((city) => (
             <Marker key={city.name} coordinates={city.coords}>
-              <circle className="map-pulse-ring" r={4} fill="#0bb5e9" stroke="none" fillOpacity={0.4} />
-              <circle r={4} fill="#0bb5e9" stroke="none" />
+              <circle className="map-pulse-ring map-dot" r={4} fill="#0bb5e9" stroke="none" fillOpacity={0.4} />
+              <circle className="map-dot" r={4} fill="#0bb5e9" stroke="none" />
               <text
                 textAnchor={city.anchor}
                 x={city.dx}
