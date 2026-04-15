@@ -3,7 +3,7 @@ const LOGOS = [
   { src: '/clientes/anatel.svg',                alt: 'Anatel',                   height: 36 },
   { src: '/clientes/cemig.svg',                 alt: 'CEMIG',                    height: 32 },
   { src: '/clientes/funai.svg',                 alt: 'FUNAI',                    height: 96 },
-  { src: '/clientes/banco-amazonia.svg',         alt: 'Banco da Amazônia',        height: 106 },
+  { src: '/clientes/banco-amazonia.svg',         alt: 'Banco da Amazônia',        height: 116 },
   { src: '/clientes/sesi-senai.svg',             alt: 'SESI/SENAI',               height: 56 },
   { src: '/clientes/cma.svg',                   alt: 'Comando Militar da Amazônia', height: 60 },
   { src: '/clientes/antt.svg',                  alt: 'ANTT',                     height: 106 },
@@ -12,7 +12,7 @@ const LOGOS = [
   { src: '/clientes/justica-federal-pr.svg',    alt: 'Justiça Federal PR',        height: 96 },
   { src: '/clientes/seplag-mg.svg',             alt: 'SEPLAG MG',                height: 80 },
   { src: '/clientes/seduc-rs.svg',              alt: 'SEDUC RS',                 height: 96 },
-  { src: '/clientes/ferroeste.svg',             alt: 'Ferroeste',                height: 106 },
+  { src: '/clientes/ferroeste.svg',             alt: 'Ferroeste',                height: 116 },
   { src: '/clientes/tre.svg',                   alt: 'TRE Roraima/Rondônia/Acre', height: 46 },
 ]
 
