@@ -17,10 +17,8 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h4>Soluções</h4>
-          <a>Agronegócio</a>
-          <a>Governo</a>
-          <a>Logística</a>
-          <a>Empresas</a>
+          <Link href="/#starlink">Starlink</Link>
+          <Link href="/#inmarsat">Inmarsat</Link>
         </div>
         <div className="footer-col">
           <h4>Suporte</h4>
