@@ -90,6 +90,7 @@ export default function Home() {
       </section>
 
       {/* 3. STICKY FEATURE */}
+      <div id="starlink" />
       <StickyFeature />
 
       {/* 4. MARQUEE */}

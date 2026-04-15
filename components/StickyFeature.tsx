@@ -46,25 +46,6 @@ export default function StickyFeature() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentStep])
 
-  useEffect(() => {
-    function scrollToStep(step: number) {
-      const wrap = wrapRef.current
-      if (!wrap) return
-      const top = wrap.getBoundingClientRect().top + window.scrollY
-      const total = wrap.offsetHeight - window.innerHeight
-      const target = step === 0 ? top : top + total * (step / (STEPS.length - 1))
-      window.scrollTo({ top: target, behavior: 'smooth' })
-    }
-    function handleHash() {
-      const hash = window.location.hash
-      if (hash === '#starlink') scrollToStep(0)
-      else if (hash === '#inmarsat') scrollToStep(1)
-    }
-    setTimeout(handleHash, 100)
-    window.addEventListener('hashchange', handleHash)
-    return () => window.removeEventListener('hashchange', handleHash)
-  }, [])
-
   return (
     <div id="sticky-wrap" ref={wrapRef}>
       <div id="sticky-inner">

@@ -1,6 +1,15 @@
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 
+function scrollToInmarsat() {
+  const wrap = document.getElementById('sticky-wrap')
+  if (!wrap) return
+  const top = wrap.offsetTop
+  const total = wrap.offsetHeight - window.innerHeight
+  window.scrollTo({ top: top + total, behavior: 'smooth' })
+}
 
 export default function Footer() {
   return (
@@ -18,7 +27,7 @@ export default function Footer() {
         <div className="footer-col">
           <h4>Soluções</h4>
           <Link href="/#starlink">Starlink</Link>
-          <Link href="/#inmarsat">Inmarsat</Link>
+          <a onClick={scrollToInmarsat} style={{ cursor: 'pointer' }}>Inmarsat</a>
         </div>
         <div className="footer-col">
           <h4>Suporte</h4>
