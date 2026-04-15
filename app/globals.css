@@ -438,6 +438,7 @@ nav a:hover { color: var(--text); }
   position: relative; z-index: 1;
 }
 .coverage-stats { display: flex; justify-content: center; gap: 4rem; margin-top: 3.5rem; flex-wrap: wrap; }
+.map-city-label { font-family: inherit; font-size: 10px; font-weight: 700; fill: #1a418c; pointer-events: none; }
 @keyframes map-pulse { 0% { r: 4; opacity: .7; } 70% { r: 10; opacity: 0; } 100% { r: 10; opacity: 0; } }
 .map-pulse-ring { animation: map-pulse 2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
 .cov-stat { text-align: center; }
@@ -638,6 +639,7 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .team-grid { grid-template-columns: 1fr 1fr; }
   .map-crop { margin-top: 0; margin-bottom: 0; }
   .coverage-map-wrap { border-radius: 20px; }
+  .map-city-label { font-size: 16px !important; }
 }
 @media (max-width: 480px) {
   .sectors-grid { grid-template-columns: 1fr; }

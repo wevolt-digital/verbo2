@@ -80,13 +80,7 @@ export default function CoverageMap() {
                 stroke="#fff"
                 strokeWidth={3}
                 paintOrder="stroke"
-                style={{
-                  fontFamily: 'inherit',
-                  fontSize: '10px',
-                  fontWeight: 700,
-                  fill: PRIMARY,
-                  pointerEvents: 'none',
-                }}
+                className="map-city-label"
               >
                 {city.name}
               </text>
