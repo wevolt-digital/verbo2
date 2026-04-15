@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps'
 
 const GEO_URL = '/world-110m.json'
@@ -33,8 +32,6 @@ const PRIMARY_HOVER = '#1e4fa8'
 const STROKE        = 'rgba(26,65,140,.35)'
 
 export default function CoverageMap() {
-  const [hoveredCity, setHoveredCity] = useState<string | null>(null)
-
   return (
     <section id="coverage">
       <div className="coverage-label sr">
@@ -73,32 +70,26 @@ export default function CoverageMap() {
           </Geographies>
 
           {BRAZIL_CITIES.map((city) => (
-            <Marker
-              key={city.name}
-              coordinates={city.coords}
-              onMouseEnter={() => setHoveredCity(city.name)}
-              onMouseLeave={() => setHoveredCity(null)}
-            >
-              <circle r={4} fill="#0bb5e9" stroke="none" style={{ cursor: 'pointer' }} />
-              {hoveredCity === city.name && (
-                <text
-                  textAnchor={city.anchor}
-                  x={city.dx}
-                  y={city.dy}
-                  stroke="#fff"
-                  strokeWidth={3}
-                  paintOrder="stroke"
-                  style={{
-                    fontFamily: 'inherit',
-                    fontSize: '10px',
-                    fontWeight: 700,
-                    fill: '#000',
-                    pointerEvents: 'none',
-                  }}
-                >
-                  {city.name}
-                </text>
-              )}
+            <Marker key={city.name} coordinates={city.coords}>
+              <circle className="map-pulse-ring" r={4} fill="#0bb5e9" stroke="none" fillOpacity={0.4} />
+              <circle r={4} fill="#0bb5e9" stroke="none" />
+              <text
+                textAnchor={city.anchor}
+                x={city.dx}
+                y={city.dy}
+                stroke="#fff"
+                strokeWidth={3}
+                paintOrder="stroke"
+                style={{
+                  fontFamily: 'inherit',
+                  fontSize: '10px',
+                  fontWeight: 700,
+                  fill: PRIMARY,
+                  pointerEvents: 'none',
+                }}
+              >
+                {city.name}
+              </text>
             </Marker>
           ))}
         </ComposableMap>

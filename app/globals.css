@@ -438,6 +438,8 @@ nav a:hover { color: var(--text); }
   position: relative; z-index: 1;
 }
 .coverage-stats { display: flex; justify-content: center; gap: 4rem; margin-top: 3.5rem; flex-wrap: wrap; }
+@keyframes map-pulse { 0% { r: 4; opacity: .7; } 70% { r: 10; opacity: 0; } 100% { r: 10; opacity: 0; } }
+.map-pulse-ring { animation: map-pulse 2s ease-out infinite; transform-box: fill-box; transform-origin: center; }
 .cov-stat { text-align: center; }
 .cov-num { font-size: 2rem; font-weight: 800; color: var(--primary); letter-spacing: -.03em; }
 .cov-num em { font-style: normal; color: var(--cyan); }
