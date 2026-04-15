@@ -116,6 +116,18 @@ header.scrolled {
 nav { display: flex; gap: 2rem; }
 nav a { font-size: .82rem; font-weight: 500; color: rgba(29,29,31,.55); transition: color .2s; cursor: pointer; }
 nav a:hover { color: var(--text); }
+.btn-header-desktop { display: flex; }
+.hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; width: 32px; height: 32px; }
+.hamburger span { display: block; height: 2px; width: 22px; background: var(--text); border-radius: 2px; transition: all .3s; transform-origin: center; }
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu { position: fixed; inset: 0; top: 64px; z-index: 199; background: rgba(255,255,255,.97); backdrop-filter: blur(20px); display: flex; flex-direction: column; padding: 2rem 6%; transform: translateY(-100%); opacity: 0; transition: transform .35s ease, opacity .35s ease; pointer-events: none; }
+.mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+.mobile-nav { display: flex; flex-direction: column; gap: 0; margin-top: 1rem; }
+.mobile-nav a { font-size: 1.1rem; font-weight: 500; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border); transition: color .2s; }
+.mobile-nav a:hover { color: var(--primary); }
+.mobile-menu-cta { margin-top: 2rem; text-align: center; border-bottom: none !important; }
 .btn-header {
   padding: .42rem 1.1rem; border-radius: 50px;
   font-size: .8rem; font-weight: 600;
@@ -629,6 +641,8 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
   nav { display: none; }
+  .hamburger { display: flex; }
+  .btn-header-desktop { display: none; }
   .sticky-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .why-inner { grid-template-columns: 1fr; gap: 3rem; }
   .why-cards { grid-template-columns: 1fr 1fr; }
