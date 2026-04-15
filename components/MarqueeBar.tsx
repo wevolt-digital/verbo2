@@ -1,4 +1,5 @@
 const LOGOS = [
+  { src: '/clientes/tre.svg',                   alt: 'TRE Roraima/Rondônia/Acre', height: 46 },
   { src: '/clientes/presidencia-republica.svg', alt: 'Presidência da República', height: 56 },
   { src: '/clientes/anatel.svg',                alt: 'Anatel',                   height: 36 },
   { src: '/clientes/cemig.svg',                 alt: 'CEMIG',                    height: 32 },
@@ -13,7 +14,6 @@ const LOGOS = [
   { src: '/clientes/seplag-mg.svg',             alt: 'SEPLAG MG',                height: 80 },
   { src: '/clientes/seduc-rs.svg',              alt: 'SEDUC RS',                 height: 96 },
   { src: '/clientes/ferroeste.svg',             alt: 'Ferroeste',                height: 128 },
-  { src: '/clientes/tre.svg',                   alt: 'TRE Roraima/Rondônia/Acre', height: 46 },
 ]
 
 export default function MarqueeBar() {
