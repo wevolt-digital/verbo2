@@ -1,19 +1,19 @@
 const LOGOS = [
-  { src: '/clientes/presidencia-republica.svg', alt: 'Presidência da República' },
-  { src: '/clientes/anatel.svg',                alt: 'Anatel' },
-  { src: '/clientes/cemig.svg',                 alt: 'CEMIG' },
-  { src: '/clientes/funai.svg',                 alt: 'FUNAI' },
-  { src: '/clientes/banco-amazonia.svg',         alt: 'Banco da Amazônia' },
-  { src: '/clientes/sesi-senai.svg',             alt: 'SESI/SENAI' },
-  { src: '/clientes/cma.svg',                   alt: 'Comando Militar da Amazônia' },
-  { src: '/clientes/antt.svg',                  alt: 'ANTT' },
-  { src: '/clientes/tribunal-justica-ms.svg',   alt: 'Tribunal de Justiça MS' },
-  { src: '/clientes/tribunal-justica-ro.svg',   alt: 'Tribunal de Justiça RO' },
-  { src: '/clientes/justica-federal-pr.svg',    alt: 'Justiça Federal PR' },
-  { src: '/clientes/seplag-mg.svg',             alt: 'SEPLAG MG' },
-  { src: '/clientes/seduc-rs.svg',              alt: 'SEDUC RS' },
-  { src: '/clientes/ferroeste.svg',             alt: 'Ferroeste' },
-  { src: '/clientes/tre.svg',                   alt: 'TRE Roraima/Rondônia/Acre' },
+  { src: '/clientes/presidencia-republica.svg', alt: 'Presidência da República', height: 56 },
+  { src: '/clientes/anatel.svg',                alt: 'Anatel',                   height: 56 },
+  { src: '/clientes/cemig.svg',                 alt: 'CEMIG',                    height: 56 },
+  { src: '/clientes/funai.svg',                 alt: 'FUNAI',                    height: 96 },
+  { src: '/clientes/banco-amazonia.svg',         alt: 'Banco da Amazônia',        height: 96 },
+  { src: '/clientes/sesi-senai.svg',             alt: 'SESI/SENAI',               height: 56 },
+  { src: '/clientes/cma.svg',                   alt: 'Comando Militar da Amazônia', height: 96 },
+  { src: '/clientes/antt.svg',                  alt: 'ANTT',                     height: 96 },
+  { src: '/clientes/tribunal-justica-ms.svg',   alt: 'Tribunal de Justiça MS',   height: 96 },
+  { src: '/clientes/tribunal-justica-ro.svg',   alt: 'Tribunal de Justiça RO',   height: 96 },
+  { src: '/clientes/justica-federal-pr.svg',    alt: 'Justiça Federal PR',        height: 96 },
+  { src: '/clientes/seplag-mg.svg',             alt: 'SEPLAG MG',                height: 96 },
+  { src: '/clientes/seduc-rs.svg',              alt: 'SEDUC RS',                 height: 96 },
+  { src: '/clientes/ferroeste.svg',             alt: 'Ferroeste',                height: 96 },
+  { src: '/clientes/tre.svg',                   alt: 'TRE Roraima/Rondônia/Acre', height: 56 },
 ]
 
 export default function MarqueeBar() {
@@ -25,7 +25,7 @@ export default function MarqueeBar() {
         {doubled.map((logo, i) => (
           <div key={i} className="marquee-item">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={logo.src} alt={logo.alt} style={{ height: '96px', width: 'auto', objectFit: 'contain' }} />
+            <img src={logo.src} alt={logo.alt} style={{ height: `${logo.height}px`, width: 'auto', objectFit: 'contain' }} />
           </div>
         ))}
       </div>
