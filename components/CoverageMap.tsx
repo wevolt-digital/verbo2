@@ -7,19 +7,26 @@ const GEO_URL = '/world-110m.json'
 
 // ISO numeric codes dos países com presença VERBO
 const ACTIVE_COUNTRIES = new Set([
-  '036', // Austrália
-  '554', // Nova Zelândia
-  '360', // Indonésia
-  '840', // EUA
   '076', // Brasil
   '170', // Colômbia
-  '528', // Holanda
-  '300', // Grécia
-  '196', // Chipre
 ])
 
-// Antártica (010) — não exibir
-const EXCLUDED = new Set(['010'])
+// Países da América do Sul — exibir apenas estes
+const SOUTH_AMERICA = new Set([
+  '032', // Argentina
+  '068', // Bolívia
+  '076', // Brasil
+  '152', // Chile
+  '170', // Colômbia
+  '218', // Equador
+  '328', // Guiana
+  '604', // Peru
+  '600', // Paraguai
+  '740', // Suriname
+  '858', // Uruguai
+  '862', // Venezuela
+  '254', // Guiana Francesa
+])
 
 const BRAZIL_CITIES = [
   { name: 'Belo Horizonte', coords: [-43.9345, -19.9167] as [number, number], anchor: 'start'  as const, dx: 6,  dy: 4   },
@@ -47,14 +54,14 @@ export default function CoverageMap() {
         <div className="map-grid-lines" />
         <div className="map-crop">
         <ComposableMap
-          projection="geoNaturalEarth1"
+          projection="geoMercator"
           style={{ width: '100%', height: 'auto', position: 'relative', zIndex: 1 }}
-          projectionConfig={{ scale: 155, center: [0, 10] }}
+          projectionConfig={{ scale: 380, center: [-58, -15] }}
         >
           <Geographies geography={GEO_URL}>
             {({ geographies }: { geographies: any[] }) =>
               geographies
-                .filter((geo: any) => !EXCLUDED.has(String(geo.id).padStart(3, '0')))
+                .filter((geo: any) => SOUTH_AMERICA.has(String(geo.id).padStart(3, '0')))
                 .map((geo: any) => {
                   const id     = String(geo.id).padStart(3, '0')
                   const active = ACTIVE_COUNTRIES.has(id)
