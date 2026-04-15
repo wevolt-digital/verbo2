@@ -1,14 +1,19 @@
 const LOGOS = [
-  { src: '/clientes/antt.svg', alt: 'ANTT', large: true },
-  { src: '/clientes/banco-amazonia.svg', alt: 'Banco da Amazônia', large: true },
-  { src: '/clientes/bec.svg', alt: 'BEC', large: false },
-  { src: '/clientes/biodiversitas.svg', alt: 'Biodiversitas', large: false },
-  { src: '/clientes/censipam.svg', alt: 'CENSIPAM', large: false },
-  { src: '/clientes/defensoria-bahia.svg', alt: 'Defensoria Pública da Bahia', large: true },
-  { src: '/clientes/defensoria-rj.svg', alt: 'Defensoria Pública do RJ', large: false },
-  { src: '/clientes/ferroeste.svg', alt: 'Ferroeste', large: true },
-  { src: '/clientes/funai.svg', alt: 'FUNAI', large: false },
-  { src: '/clientes/operacao-acolhida.svg', alt: 'Operação Acolhida', large: false },
+  { src: '/clientes/presidencia-republica.svg', alt: 'Presidência da República' },
+  { src: '/clientes/anatel.svg',                alt: 'Anatel' },
+  { src: '/clientes/cemig.svg',                 alt: 'CEMIG' },
+  { src: '/clientes/funai.svg',                 alt: 'FUNAI' },
+  { src: '/clientes/banco-amazonia.svg',         alt: 'Banco da Amazônia' },
+  { src: '/clientes/sesi-senai.svg',             alt: 'SESI/SENAI' },
+  { src: '/clientes/cma.svg',                   alt: 'Comando Militar da Amazônia' },
+  { src: '/clientes/antt.svg',                  alt: 'ANTT' },
+  { src: '/clientes/tribunal-justica-ms.svg',   alt: 'Tribunal de Justiça MS' },
+  { src: '/clientes/tribunal-justica-ro.svg',   alt: 'Tribunal de Justiça RO' },
+  { src: '/clientes/justica-federal-pr.svg',    alt: 'Justiça Federal PR' },
+  { src: '/clientes/seplag-mg.svg',             alt: 'SEPLAG MG' },
+  { src: '/clientes/seduc-rs.svg',              alt: 'SEDUC RS' },
+  { src: '/clientes/ferroeste.svg',             alt: 'Ferroeste' },
+  { src: '/clientes/tre.svg',                   alt: 'TRE Roraima/Rondônia/Acre' },
 ]
 
 export default function MarqueeBar() {
@@ -20,7 +25,7 @@ export default function MarqueeBar() {
         {doubled.map((logo, i) => (
           <div key={i} className="marquee-item">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={logo.src} alt={logo.alt} style={{ height: logo.large ? '128px' : undefined, width: 'auto', objectFit: 'contain' }} />
+            <img src={logo.src} alt={logo.alt} style={{ height: '96px', width: 'auto', objectFit: 'contain' }} />
           </div>
         ))}
       </div>
