@@ -636,6 +636,8 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .stat-divider { display: none; }
   .stat-row { gap: 2rem; }
   .team-grid { grid-template-columns: 1fr 1fr; }
+  .map-crop { margin-top: 0; margin-bottom: 0; }
+  .coverage-map-wrap { border-radius: 20px; }
 }
 @media (max-width: 480px) {
   .sectors-grid { grid-template-columns: 1fr; }
