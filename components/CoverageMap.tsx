@@ -1,95 +1,82 @@
 'use client'
 
-import { ComposableMap, Geographies, Geography, Marker } from 'react-simple-maps'
+import { ComposableMap, Geographies, Geography } from 'react-simple-maps'
 
-const GEO_URL = '/world-110m.json'
+const GEO_URL = '/brazil-states.geojson'
 
-const SOUTH_AMERICA = new Set([
-  '032', // Argentina
-  '068', // Bolívia
-  '076', // Brasil
-  '152', // Chile
-  '170', // Colômbia
-  '218', // Equador
-  '328', // Guiana
-  '604', // Peru
-  '600', // Paraguai
-  '740', // Suriname
-  '858', // Uruguai
-  '862', // Venezuela
-  '254', // Guiana Francesa
+// Estados com presença VERBO (infraestrutura ativa)
+const VERBO_STATES = new Set([
+  'RS', // Rio Grande do Sul
+  'SP', // São Paulo
+  'RJ', // Rio de Janeiro
+  'MG', // Minas Gerais
+  'ES', // Espírito Santo
+  'BA', // Bahia
+  'PE', // Pernambuco
+  'CE', // Ceará
+  'MA', // Maranhão
+  'AP', // Amapá
+  'RR', // Roraima
+  'AM', // Amazonas
+  'AC', // Acre
+  'RO', // Rondônia
+  'MS', // Mato Grosso do Sul
+  'GO', // Goiás
+  'TO', // Tocantins
+  'DF', // Distrito Federal
 ])
 
-const BRAZIL_CITIES = [
-  { name: 'Belo Horizonte', coords: [-43.9345, -19.9167] as [number, number], anchor: 'start'  as const, dx: 6,  dy: 4   },
-  { name: 'Brasília',       coords: [-47.9297, -15.7801] as [number, number], anchor: 'end'    as const, dx: -6, dy: -8  },
-  { name: 'Rio de Janeiro', coords: [-43.1729, -22.9068] as [number, number], anchor: 'start'  as const, dx: 6,  dy: 4   },
-  { name: 'Belém',          coords: [-48.5044,  -1.4558] as [number, number], anchor: 'middle' as const, dx: 0,  dy: -10 },
-]
-
-const PRIMARY       = '#1a418c'
-const PRIMARY_HOVER = '#1e4fa8'
-const STROKE        = 'rgba(26,65,140,.35)'
+const COLOR_ACTIVE  = '#1a418c'
+const COLOR_IDLE    = 'rgba(26,65,140,.10)'
+const STROKE_ACTIVE = 'rgba(26,65,140,.5)'
+const STROKE_IDLE   = 'rgba(26,65,140,.2)'
 
 export default function CoverageMap() {
   return (
     <section id="coverage">
       <div className="coverage-label sr">
         <span className="eyebrow">Mapa de cobertura</span>
-        <h2>Disponível em todo o Brasil.</h2>
-        <p>A VERBO possui escritórios distribuídos em cinco continentes, incluindo Austrália, Nova Zelândia, Indonésia, EUA, Brasil, Colômbia, Holanda, Grécia e Chipre. Todos os pontos de contato com o cliente são locais, com suporte de uma equipe experiente. No Brasil, temos escritórios em Belo Horizonte, Brasília, Rio de Janeiro e Belém.</p>
+        <h2>Presença em todo o território nacional.</h2>
+        <p>
+          A VERBO opera com infraestrutura ativa em 18 estados brasileiros e no Distrito Federal.
+          Nossa presença é definida por pontos de operação instalados — não apenas clientes locais —
+          garantindo conectividade confiável mesmo nas regiões mais remotas do país.
+        </p>
       </div>
 
       <div className="coverage-map-wrap sr-scale d2">
         <div className="map-grid-lines" />
         <div className="map-crop">
-        <ComposableMap
-          projection="geoMercator"
-          style={{ width: '100%', height: 'auto', position: 'relative', zIndex: 1 }}
-          projectionConfig={{ scale: 620, center: [-52, -14] }}
-        >
-          <Geographies geography={GEO_URL}>
-            {({ geographies }: { geographies: any[] }) =>
-              geographies
-                .filter((geo: any) => SOUTH_AMERICA.has(String(geo.id).padStart(3, '0')))
-                .map((geo: any) => (
-                  <Geography
-                    key={geo.rsmKey}
-                    geography={geo}
-                    fill="transparent"
-                    stroke={STROKE}
-                    strokeWidth={0.8}
-                    style={{
-                      default: { outline: 'none' },
-                      hover:   { outline: 'none', fill: 'rgba(26,65,140,.06)' },
-                      pressed: { outline: 'none' },
-                    }}
-                  />
-                ))
-            }
-          </Geographies>
-
-          {BRAZIL_CITIES.map((city) => (
-            <Marker key={city.name} coordinates={city.coords}>
-              <circle className="map-pulse-ring map-dot" r={4} fill="#0bb5e9" stroke="none" fillOpacity={0.4} />
-              <circle className="map-dot" r={4} fill="#0bb5e9" stroke="none" />
-              <text
-                textAnchor={city.anchor}
-                x={city.dx}
-                y={city.dy}
-                stroke="#fff"
-                strokeWidth={3}
-                paintOrder="stroke"
-                className="map-city-label"
-              >
-                {city.name}
-              </text>
-            </Marker>
-          ))}
-        </ComposableMap>
+          <ComposableMap
+            projection="geoMercator"
+            style={{ width: '100%', height: 'auto', position: 'relative', zIndex: 1 }}
+            projectionConfig={{ scale: 620, center: [-52, -14] }}
+          >
+            <Geographies geography={GEO_URL}>
+              {({ geographies }: { geographies: any[] }) =>
+                geographies.map((geo: any) => {
+                  const sigla  = geo.properties?.sigla as string | undefined
+                  const active = sigla ? VERBO_STATES.has(sigla) : false
+                  return (
+                    <Geography
+                      key={geo.rsmKey}
+                      geography={geo}
+                      fill={active ? COLOR_ACTIVE : COLOR_IDLE}
+                      stroke={active ? STROKE_ACTIVE : STROKE_IDLE}
+                      strokeWidth={0.6}
+                      style={{
+                        default: { outline: 'none' },
+                        hover:   { outline: 'none', fill: active ? '#1e4fa8' : 'rgba(26,65,140,.18)' },
+                        pressed: { outline: 'none' },
+                      }}
+                    />
+                  )
+                })
+              }
+            </Geographies>
+          </ComposableMap>
         </div>
       </div>
-
     </section>
   )
 }
