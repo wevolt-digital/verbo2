@@ -25,10 +25,11 @@ const VERBO_STATES = new Set([
   'AP','RR','AM','AC','RO','MS','GO','TO','DF',
 ])
 
-const PRIMARY       = '#1a418c'
-const PRIMARY_LIGHT = 'rgba(26,65,140,.18)'
-const STROKE_BR     = 'rgba(26,65,140,.35)'
-const STROKE_SA     = 'rgba(26,65,140,.25)'
+const PRIMARY        = '#1a418c'
+const PRIMARY_LIGHT  = 'rgba(26,65,140,.18)'
+const STROKE_ACTIVE  = 'rgba(255,255,255,.45)'   // contorno claro entre estados ativos
+const STROKE_IDLE    = 'rgba(26,65,140,.3)'
+const STROKE_SA      = 'rgba(26,65,140,.25)'
 
 export default function CoverageMap() {
   return (
@@ -84,8 +85,8 @@ export default function CoverageMap() {
                       key={geo.rsmKey}
                       geography={geo}
                       fill={active ? PRIMARY : PRIMARY_LIGHT}
-                      stroke={STROKE_BR}
-                      strokeWidth={0.5}
+                      stroke={active ? STROKE_ACTIVE : STROKE_IDLE}
+                      strokeWidth={active ? 1 : 0.5}
                       style={{
                         default: { outline: 'none' },
                         hover:   { outline: 'none', fill: active ? '#1e4fa8' : 'rgba(26,65,140,.28)' },
