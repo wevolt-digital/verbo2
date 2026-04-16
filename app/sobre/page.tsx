@@ -59,7 +59,7 @@ export default function SobrePage() {
 
       {/* Essência */}
       <section style={{ padding: '100px 5%', background: 'var(--surface)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6rem', alignItems: 'center' }}>
+        <div className="essencia-section-grid">
           <div className="sr-left">
             <div className="eyebrow">Nossa Essência</div>
             <h2 style={{ fontSize: 'clamp(2rem,3.5vw,3rem)', fontWeight: 700, marginBottom: '1.2rem', color: 'var(--text)' }}>

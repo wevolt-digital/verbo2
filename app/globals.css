@@ -389,6 +389,10 @@ nav a:hover { color: var(--text); }
 .sector-tile--video .tile-desc { color: rgba(255,255,255,.75); }
 
 /* ─── ESSÊNCIA VIDEO ─── */
+.essencia-section-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
+}
 .essencia-video-mobile { display: none; }
 .essencia-video-wrap {
   position: relative;
@@ -657,6 +661,8 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .why-cards { grid-template-columns: 1fr; }
   .sectors-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .essencia-section-grid { grid-template-columns: 1fr; gap: 0; }
+  .essencia-section-grid > .essencia-video-wrap { display: none; }
   .essencia-video-wrap { display: none; }
   .infra-section-grid { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
   .infra-section-grid > :first-child { order: 2; }
