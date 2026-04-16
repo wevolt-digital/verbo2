@@ -646,7 +646,7 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .sticky-img-mobile { display: block; border-radius: 18px; overflow: hidden; margin-bottom: 1.2rem; }
   .sticky-tag { display: none; }
   .why-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .why-cards { grid-template-columns: 1fr 1fr; }
+  .why-cards { grid-template-columns: 1fr; }
   .sectors-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .stat-divider { display: none; }
