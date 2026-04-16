@@ -671,11 +671,14 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .infra-section-grid .mission-card { text-align: left; }
   .mission-card { padding: 1.5rem; }
   /* Policies mobile */
-  .policies-layout { grid-template-columns: 1fr; gap: 2rem; padding: 40px 5% 60px; }
+  .policies-layout { grid-template-columns: 1fr; gap: 2rem; padding: 40px 5% 60px; overflow-x: hidden; }
+  .policies-layout > * { min-width: 0; }
   .policies-sidebar { position: static; }
-  .policies-sidebar > div { padding: 0; background: none !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; display: flex; gap: 0; border-bottom: 1px solid var(--border) !important; overflow-x: auto; }
+  .policies-sidebar > div { padding: 0; background: none !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; display: flex; gap: 0; border-bottom: 1px solid var(--border) !important; overflow-x: auto; width: 100%; }
   .sidebar-link { flex: 0 0 auto; text-align: center; padding: .75rem 1rem; border-left: none; border-bottom: 2px solid transparent; font-size: .82rem; white-space: nowrap; }
   .sidebar-link:hover, .sidebar-link.active { border-left-color: transparent; border-bottom-color: var(--primary); }
+  .policy-section { word-break: break-word; overflow-wrap: break-word; }
+  .policy-section .btn-p { white-space: normal; text-align: center; width: 100%; justify-content: center; box-sizing: border-box; }
   .essencia-video-mobile { display: block; border-radius: 18px; overflow: hidden; margin-bottom: 1.5rem; aspect-ratio: 4/3; position: relative; }
   .essencia-video-mobile .essencia-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
   .footer-brand { text-align: center; }
