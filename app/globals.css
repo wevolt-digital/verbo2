@@ -653,6 +653,7 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .footer-brand { text-align: center; }
   .footer-brand .logo-f { display: flex; justify-content: center; }
   .footer-cols-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+  .footer-bottom { justify-content: center; text-align: center; }
   .stat-divider { display: none; }
   .stat-row { gap: 2rem; }
   .team-grid { grid-template-columns: 1fr 1fr; }
