@@ -40,9 +40,6 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <span>© 2026 VERBO. Todos os direitos reservados.</span>
-        <div style={{ display: 'flex', gap: '1.5rem' }}>
-          <Link href="/politicas">Privacidade</Link>
-        </div>
       </div>
     </footer>
   )
