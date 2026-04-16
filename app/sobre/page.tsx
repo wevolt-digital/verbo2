@@ -106,7 +106,7 @@ export default function SobrePage() {
 
       {/* Infraestrutura */}
       <section style={{ padding: '100px 5%', background: 'var(--surface)' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+        <div className="infra-section-grid">
           {/* Slider — esquerda */}
           <InfraSlider />
           {/* Conteúdo — direita */}
