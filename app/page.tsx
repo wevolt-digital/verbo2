@@ -51,11 +51,11 @@ export default function Home() {
       {/* 2. STAT CALLOUT */}
       <section id="stat-callout">
         <div className="stat-inner">
-          <div className="stat-label-top sr">Velocidade de download</div>
+          <div className="stat-label-top sr">Escala de operação</div>
           <div className="stat-giant sr d1">
-            <AnimatedCounter value={400} suffix="+" />
+            <AnimatedCounter value={1000} suffix="+" />
           </div>
-          <div className="stat-unit sr d1">Mbps</div>
+          <div className="stat-unit sr d1">Pontos contratados</div>
           <p className="stat-context sr d2">Uma conexão que não conhece distância. Disponível em todo o Brasil, de norte a sul.</p>
           <div className="stat-row sr d3">
             <div className="stat-item">
@@ -74,16 +74,16 @@ export default function Home() {
             <div className="stat-divider" />
             <div className="stat-item">
               <div className="stat-val">
-                <AnimatedCounter value={500} /><em>+</em>
+                <AnimatedCounter value={2} />
               </div>
-              <div className="stat-desc">Clientes ativos</div>
+              <div className="stat-desc">Tecnologias orbitais</div>
             </div>
             <div className="stat-divider" />
             <div className="stat-item">
               <div className="stat-val">
-                <AnimatedCounter value={8} /><em>ms</em>
+                <AnimatedCounter value={18} />
               </div>
-              <div className="stat-desc">Latência LEO</div>
+              <div className="stat-desc">Estados com presença ativa</div>
             </div>
           </div>
         </div>
