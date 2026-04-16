@@ -75,8 +75,21 @@ export default function PoliticasPage() {
       </section>
 
       {/* ── Layout: sidebar + content ── */}
+      {/* Select mobile */}
+      <div className="policies-select-wrap">
+        <select
+          className="policies-select"
+          value={active}
+          onChange={e => setActive(e.target.value)}
+        >
+          {sections.map(s => (
+            <option key={s.id} value={s.id}>{s.title}</option>
+          ))}
+        </select>
+      </div>
+
       <div className="policies-layout">
-        {/* Sidebar */}
+        {/* Sidebar desktop */}
         <aside className="policies-sidebar">
           <div style={{
             background: '#fff',
