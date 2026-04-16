@@ -39,7 +39,7 @@ export default function CoverageMap() {
         <h2>Presença em todo o território nacional.</h2>
         <p>
           A VERBO opera com infraestrutura ativa em 18 estados brasileiros e no Distrito Federal.
-          Nossa presença é definida por pontos de operação instalados — não apenas clientes locais —
+          Nossa presença é definida por pontos de operação instalados,
           garantindo conectividade confiável mesmo nas regiões mais remotas do país.
         </p>
       </div>
