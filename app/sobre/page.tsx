@@ -68,6 +68,18 @@ export default function SobrePage() {
                 e sem fronteiras
               </span>
             </h2>
+            {/* Vídeo mobile — entre h2 e texto */}
+            <div className="essencia-video-mobile">
+              <video
+                src="/essencia-verbo.mp4"
+                className="essencia-video"
+                muted
+                playsInline
+                loop
+                autoPlay
+                preload="metadata"
+              />
+            </div>
             <p style={{ color: 'var(--muted)', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               Acreditamos que soluções móveis via satélite devem ser simples e acessíveis. Por isso, desenvolvemos nossa própria rede terrestre exclusiva para conectar você a soluções incomparáveis, com as redes móveis por satélite mais confiáveis do mundo.
             </p>
