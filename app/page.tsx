@@ -60,28 +60,28 @@ export default function Home() {
           <div className="stat-row sr d3">
             <div className="stat-item">
               <div className="stat-val">
-                <AnimatedCounter value={99} /><em>%</em>
+                <em><AnimatedCounter value={99} />%</em>
               </div>
               <div className="stat-desc">Uptime garantido</div>
             </div>
             <div className="stat-divider" />
             <div className="stat-item">
               <div className="stat-val">
-                <AnimatedCounter value={24} /><em>/7</em>
+                <em><AnimatedCounter value={24} />/7</em>
               </div>
               <div className="stat-desc">Suporte técnico</div>
             </div>
             <div className="stat-divider" />
             <div className="stat-item">
               <div className="stat-val">
-                <AnimatedCounter value={2} />
+                <em><AnimatedCounter value={2} /></em>
               </div>
               <div className="stat-desc">Tecnologias orbitais</div>
             </div>
             <div className="stat-divider" />
             <div className="stat-item">
               <div className="stat-val">
-                <AnimatedCounter value={18} />
+                <em><AnimatedCounter value={18} /></em>
               </div>
               <div className="stat-desc">Estados com presença ativa</div>
             </div>
