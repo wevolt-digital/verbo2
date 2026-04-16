@@ -36,7 +36,7 @@ export default function CoverageMap() {
     <section id="coverage">
       <div className="coverage-label sr">
         <span className="eyebrow">Mapa de cobertura</span>
-        <h2>Presença em todo o território nacional.</h2>
+        <h2>Conectividade de norte a sul do Brasil.</h2>
         <p>
           A VERBO opera com infraestrutura ativa em 18 estados brasileiros e no Distrito Federal.
           Nossa presença é definida por pontos de operação instalados,
