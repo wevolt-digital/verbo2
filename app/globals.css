@@ -520,6 +520,7 @@ nav a:hover { color: var(--text); }
 /* ─── FOOTER ─── */
 footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto 3rem; }
+.footer-cols-row { display: contents; }
 .footer-brand .logo-f { font-size: 1.25rem; font-weight: 800; letter-spacing: -.02em; color: #fff; margin-bottom: .9rem; }
 .footer-brand p { font-size: .82rem; line-height: 1.7; max-width: 240px; }
 .footer-col h4 { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 1.2rem; }
@@ -648,7 +649,10 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .why-inner { grid-template-columns: 1fr; gap: 3rem; }
   .why-cards { grid-template-columns: 1fr; }
   .sectors-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-brand { text-align: center; }
+  .footer-brand .logo-f { display: flex; justify-content: center; }
+  .footer-cols-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
   .stat-divider { display: none; }
   .stat-row { gap: 2rem; }
   .team-grid { grid-template-columns: 1fr 1fr; }
@@ -658,6 +662,5 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 }
 @media (max-width: 480px) {
   .sectors-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
   .hero-ctas, .cta-group { flex-direction: column; align-items: center; }
 }
