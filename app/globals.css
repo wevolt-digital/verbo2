@@ -531,7 +531,7 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 .footer-col h4 { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 1.2rem; }
 .footer-col a { display: block; font-size: .82rem; color: rgba(255,255,255,.5); margin-bottom: .65rem; cursor: pointer; transition: color .2s; }
 .footer-col a:hover { color: #fff; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.5rem; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: .75rem; flex-wrap: wrap; gap: .5rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.5rem; max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: center; font-size: .75rem; flex-wrap: wrap; gap: .5rem; }
 .footer-bottom a { color: rgba(255,255,255,.4); transition: color .2s; }
 .footer-bottom a:hover { color: rgba(255,255,255,.7); }
 
