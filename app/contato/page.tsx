@@ -54,10 +54,10 @@ export default function ContatoPage() {
 
       {/* Contact Layout */}
       <section style={{ padding: '100px 5%', background: 'var(--bg)' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
+        <div className="contact-grid">
 
           {/* Form */}
-          <div className="sr-left">
+          <div className="sr-left contact-form-col">
             <div className="eyebrow">Envie uma mensagem</div>
             <h2 style={{ fontSize: 'clamp(1.8rem,3vw,2.5rem)', fontWeight: 700, marginBottom: '1.5rem', color: 'var(--text)' }}>
               Solicite uma <span className="g-text">proposta</span>
@@ -66,7 +66,7 @@ export default function ContatoPage() {
           </div>
 
           {/* Contact info */}
-          <div className="sr-right" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div className="sr-right contact-info-col" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             <div>
               <div className="eyebrow">Contato direto</div>
               <h2 style={{ fontSize: 'clamp(1.8rem,3vw,2.5rem)', fontWeight: 700, marginBottom: '1.5rem', color: 'var(--text)' }}>

@@ -568,6 +568,12 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
 .p-chip { padding: .5rem 1.2rem; border-radius: 50px; border: 1px solid var(--border); font-size: .82rem; font-weight: 600; color: var(--muted); background: #fff; transition: all .25s; }
 .p-chip:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(11,181,233,.04); }
 
+/* ─── CONTACT PAGE ─── */
+.contact-grid {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+
 /* ─── POLICIES PAGE ─── */
 .policies-select-wrap { display: none; }
 .policies-select {
@@ -681,6 +687,11 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .infra-section-grid > :last-child  { order: 1; }
   .infra-section-grid .mission-card { text-align: left; }
   .mission-card { padding: 1.5rem; }
+  /* Contact mobile */
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; overflow-x: hidden; }
+  .contact-grid > * { min-width: 0; }
+  .contact-form-col { order: 1; }
+  .contact-info-col { order: 2; }
   /* Policies mobile */
   .policies-select-wrap { display: block; max-width: 1100px; margin: 0 auto; padding: 32px 5% 0; }
   .policies-layout { grid-template-columns: 1fr; gap: 1.5rem; padding: 24px 5% 60px; overflow-x: hidden; }
