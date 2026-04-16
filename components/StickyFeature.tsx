@@ -75,6 +75,16 @@ export default function StickyFeature() {
               <div key={i} className={`sticky-step${currentStep === i ? ' active' : ''}`}>
                 <span className="eyebrow">{step.eyebrow}</span>
                 <h2>{step.title}</h2>
+                {/* Imagem mobile — aparece entre h2 e texto */}
+                <div className="sticky-img-mobile">
+                  <Image
+                    src={step.image}
+                    alt={step.eyebrow}
+                    width={800}
+                    height={600}
+                    className="w-full"
+                  />
+                </div>
                 <p>{step.description}</p>
                 <div>
                   {step.tags.map((tag) => (

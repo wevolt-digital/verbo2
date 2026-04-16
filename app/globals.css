@@ -233,6 +233,7 @@ nav a:hover { color: var(--text); }
   max-width: 1200px; margin: 0 auto; width: 100%; align-items: center;
 }
 .sticky-img-side { position: relative; }
+.sticky-img-mobile { display: none; }
 .sticky-img-wrap {
   position: relative; border-radius: 24px; overflow: hidden;
   border: 1px solid var(--border);
@@ -641,6 +642,8 @@ footer { background: #1D1D1F; padding: 60px 5% 40px; color: rgba(255,255,255,.55
   .hamburger { display: flex; }
   .btn-header-desktop { display: none; }
   .sticky-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .sticky-img-side { display: none; }
+  .sticky-img-mobile { display: block; border-radius: 18px; overflow: hidden; margin-bottom: 1.2rem; }
   .why-inner { grid-template-columns: 1fr; gap: 3rem; }
   .why-cards { grid-template-columns: 1fr 1fr; }
   .sectors-grid { grid-template-columns: 1fr 1fr; }
