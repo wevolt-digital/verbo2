@@ -86,6 +86,7 @@ export default function Home() {
               <div className="stat-desc">Estados com presença ativa</div>
             </div>
           </div>
+          <p className="stat-footnote sr d4">Alta velocidade, em qualquer ponto do mapa.</p>
         </div>
       </section>
 

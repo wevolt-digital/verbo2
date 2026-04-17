@@ -221,6 +221,7 @@ nav a:hover { color: var(--text); }
 .stat-val em { font-style: normal; color: var(--cyan); }
 .stat-desc { font-size: .78rem; color: rgba(255,255,255,.45); margin-top: .4rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
 .stat-divider { width: 1px; height: 48px; background: rgba(255,255,255,.12); align-self: center; }
+.stat-footnote { font-size: .82rem; color: rgba(255,255,255,.35); margin-top: 2.5rem; letter-spacing: .03em; }
 
 /* ─── STICKY FEATURE ─── */
 #sticky-wrap { position: relative; height: 170vh; background: var(--bg); }
