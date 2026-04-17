@@ -56,7 +56,7 @@ export default function Home() {
             <AnimatedCounter value={1000} suffix="+" />
           </div>
           <div className="stat-unit sr d1">Pontos contratados</div>
-          <p className="stat-context sr d2">Uma conexão que não conhece distância. Disponível em todo o Brasil, de norte a sul.</p>
+          <p className="stat-context sr d2">Uma conexão que não conhece distância.<br />Disponível de norte a sul.</p>
           <div className="stat-row sr d3">
             <div className="stat-item">
               <div className="stat-val">
