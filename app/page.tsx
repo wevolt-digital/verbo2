@@ -34,7 +34,7 @@ export default function Home() {
             Conectividade<br /><em>sem limites</em><br />para o Brasil.
           </h1>
           <p className="sub sr d2">
-            Tecnologia orbital de última geração levando sinal de alta velocidade a qualquer ponto do território nacional, de forma rápida e confiável.
+            Tecnologia orbital de última geração levando sinal de alta velocidade em vários pontos do território nacional, de forma rápida e confiável.
           </p>
           <div className="hero-ctas sr d3" style={{ justifyContent: 'center' }}>
             <Link href="/contato" className="btn-p">
