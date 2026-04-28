@@ -43,6 +43,7 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4>Soluções</h4>
+
             <Link href="/#starlink">Starlink</Link>
 
             <a
@@ -76,7 +77,13 @@ export default function Footer() {
           flexWrap: 'wrap',
         }}
       >
-        <span>
+        <span
+          className="footer-copy"
+          style={{
+            textAlign: 'center',
+            width: '100%',
+          }}
+        >
           © 2026 VERBO. Todos os direitos reservados.
         </span>
 
@@ -85,7 +92,9 @@ export default function Footer() {
           style={{
             display: 'flex',
             alignItems: 'center',
+            justifyContent: 'center',
             gap: '16px',
+            width: '100%',
           }}
         >
           <span>Desenvolvido por</span>
