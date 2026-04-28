@@ -67,36 +67,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div
-        className="footer-bottom"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '20px',
-          flexWrap: 'wrap',
-        }}
-      >
-        <span
-          className="footer-copy"
-          style={{
-            textAlign: 'center',
-            width: '100%',
-          }}
-        >
+      <div className="footer-bottom">
+        <span className="footer-copy">
           © 2026 VERBO. Todos os direitos reservados.
         </span>
 
-        <div
-          className="footer-dev"
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '16px',
-            width: '100%',
-          }}
-        >
+        <div className="footer-dev">
           <span>Desenvolvido por</span>
 
           <Image
@@ -111,6 +87,34 @@ export default function Footer() {
           />
         </div>
       </div>
+
+      <style jsx>{`
+        .footer-bottom {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+
+        .footer-dev {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+          .footer-bottom {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+          }
+
+          .footer-dev {
+            justify-content: center;
+          }
+        }
+      `}</style>
     </footer>
   )
 }
