@@ -55,6 +55,7 @@ export default function Footer() {
 
           <div className="footer-col">
             <h4>Suporte</h4>
+
             <a href="mailto:contato@verbo.com.br">
               contato@verbo.com.br
             </a>
@@ -75,7 +76,9 @@ export default function Footer() {
           flexWrap: 'wrap',
         }}
       >
-        <span>© 2026 VERBO. Todos os direitos reservados.</span>
+        <span>
+          © 2026 VERBO. Todos os direitos reservados.
+        </span>
 
         <div
           className="footer-dev"
@@ -85,20 +88,13 @@ export default function Footer() {
             gap: '10px',
           }}
         >
-          <span
-            style={{
-              fontSize: '14px',
-              opacity: 0.8,
-            }}
-          >
-            Desenvolvido por
-          </span>
+          <span>Desenvolvido por</span>
 
           <Image
             src="/content-blue.svg"
             alt="Content Blue"
-            width={140}
-            height={40}
+            width={180}
+            height={45}
             style={{
               height: '36px',
               width: 'auto',
